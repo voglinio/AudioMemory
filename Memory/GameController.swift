@@ -4,6 +4,8 @@
 
 import UIKit
 import AFNetworking
+// import this
+import AVFoundation
 
 class GameController: UIViewController {
 
@@ -20,6 +22,13 @@ class GameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+
+        // create a sound ID, in this case its the tweet sound.
+        //let systemSoundID: SystemSoundID = 1016
+
+        // to play sound
         
         game.delegate = self
         
@@ -102,9 +111,11 @@ extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         
         if cell.shown { return }
+        cell.card?.play()
         game.didSelectCard(cell.card)
         
         collectionView.deselectItem(at: indexPath, animated:true)
+
     }
 }
 

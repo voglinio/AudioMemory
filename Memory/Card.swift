@@ -4,6 +4,8 @@
 
 import UIKit
 import SwiftyJSON
+import AVFoundation
+
 
 class Card {
 
@@ -12,6 +14,7 @@ class Card {
     var id: String
     var shown: Bool = false
     var artworkURL: UIImage!
+    var soundId: UInt32 = 1016
     
     static var allCards = [Card]()
 
@@ -19,12 +22,20 @@ class Card {
         self.id = card.id
         self.shown = card.shown
         self.artworkURL = card.artworkURL
+        self.soundId = card.soundId
     }
     
     init(image: UIImage) {
         self.id = NSUUID().uuidString
         self.shown = false
         self.artworkURL = image
+    }
+    
+    init(image: UIImage, soundId: UInt32) {
+        self.id = NSUUID().uuidString
+        self.shown = false
+        self.artworkURL = image
+        self.soundId = soundId
     }
     
     // MARK: - Methods
@@ -35,6 +46,10 @@ class Card {
     
     func copy() -> Card {
         return Card(card: self)
+    }
+    
+    func play() {
+        AudioServicesPlaySystemSound(soundId)
     }
 }
 

@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'Memory' do
   
-  pod 'AFNetworking'
+  pod 'AFNetworking', '~> 4.0'
   pod 'SwiftyJSON'
   
 end
