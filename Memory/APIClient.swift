@@ -31,11 +31,11 @@ class APIClient: AFHTTPSessionManager {
     ];
     
     static var defaultCardSounds:[UInt32] = [
-        1307,
-        1308,
+        1000,
+        1333,
         1309,
         1310,
-        1312,
+        1022,
         1313,
         1016,
         1302
