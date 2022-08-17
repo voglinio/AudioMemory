@@ -18,6 +18,9 @@
 		0ADFD6F41E3A679200848732 /* MemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFD6F31E3A679200848732 /* MemoryTests.swift */; };
 		0AFC11BC1E36A1B800D76586 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC11BB1E36A1B800D76586 /* Card.swift */; };
 		0AFC11BE1E36B78D00D76586 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC11BD1E36B78D00D76586 /* MemoryGame.swift */; };
+		A1E3997628AD3E0E0086DEC1 /* EasyPD_Demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */; };
+		A1E3997728AD3E0E0086DEC1 /* EasyPD.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E3997528AD3E0E0086DEC1 /* EasyPD.m */; };
+		A1E3999128AD3F310086DEC1 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3998228AD3EAD0086DEC1 /* libpd-ios.a */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0AA329B11E33DD7800E03511;
 			remoteInfo = Memory;
+		};
+		A1E3998128AD3EAD0086DEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+		A1E3998328AD3EAD0086DEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 119013AB1486450C00086F19;
+			remoteInfo = "libpd-osx";
+		};
+		A1E3998528AD3EAD0086DEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 30C3D36D1FAA200100C67F08;
+			remoteInfo = "libpd-ios-multi";
+		};
+		A1E3998728AD3EAD0086DEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 30C3D2FA1FAA1FCC00C67F08;
+			remoteInfo = "libpd-osx-multi";
+		};
+		A1E3998F28AD3F1B0086DEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "libpd-ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,6 +87,11 @@
 		0AFC11BD1E36B78D00D76586 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C659CB8F1716FE7B3D4415 /* Pods-Memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.debug.xcconfig"; sourceTree = "<group>"; };
+		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1E3997328AD3E0E0086DEC1 /* EasyPD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyPD.h; sourceTree = "<group>"; };
+		A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyPD_Demo.pd; sourceTree = "<group>"; };
+		A1E3997528AD3E0E0086DEC1 /* EasyPD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyPD.m; sourceTree = "<group>"; };
+		A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpd.xcodeproj; path = Memory/libpd/libpd.xcodeproj; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E3999128AD3F310086DEC1 /* libpd-ios.a in Frameworks */,
 				F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +118,7 @@
 		0AA329A91E33DD7800E03511 = {
 			isa = PBXGroup;
 			children = (
+				A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */,
 				0AA329B41E33DD7900E03511 /* Memory */,
 				0ADFD6F21E3A679200848732 /* MemoryTests */,
 				0AA329B31E33DD7900E03511 /* Products */,
@@ -94,6 +139,9 @@
 		0AA329B41E33DD7900E03511 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */,
+				A1E3997328AD3E0E0086DEC1 /* EasyPD.h */,
+				A1E3997528AD3E0E0086DEC1 /* EasyPD.m */,
 				0AA329B51E33DD7900E03511 /* AppDelegate.swift */,
 				0AA329CB1E34763F00E03511 /* APIClient.swift */,
 				0ADFD6DB1E37FE9500848732 /* Constants.swift */,
@@ -103,6 +151,7 @@
 				0AA329BC1E33DD7900E03511 /* Assets.xcassets */,
 				0AA329BE1E33DD7900E03511 /* LaunchScreen.storyboard */,
 				0AA329C11E33DD7900E03511 /* Info.plist */,
+				A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -159,6 +208,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1E3997B28AD3EAD0086DEC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1E3998228AD3EAD0086DEC1 /* libpd-ios.a */,
+				A1E3998428AD3EAD0086DEC1 /* libpd-osx.a */,
+				A1E3998628AD3EAD0086DEC1 /* libpd-ios-multi.a */,
+				A1E3998828AD3EAD0086DEC1 /* libpd-osx-multi.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,6 +235,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A1E3999028AD3F1B0086DEC1 /* PBXTargetDependency */,
 			);
 			name = Memory;
 			productName = Memory;
@@ -212,7 +273,7 @@
 					0AA329B11E33DD7800E03511 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 86SDT7KNNB;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 1240;
 						ProvisioningStyle = Automatic;
 					};
 					0ADFD6F01E3A679200848732 = {
@@ -233,6 +294,12 @@
 			mainGroup = 0AA329A91E33DD7800E03511;
 			productRefGroup = 0AA329B31E33DD7900E03511 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A1E3997B28AD3EAD0086DEC1 /* Products */;
+					ProjectRef = A1E3997A28AD3EAD0086DEC1 /* libpd.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0AA329B11E33DD7800E03511 /* Memory */,
@@ -241,6 +308,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		A1E3998228AD3EAD0086DEC1 /* libpd-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios.a";
+			remoteRef = A1E3998128AD3EAD0086DEC1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A1E3998428AD3EAD0086DEC1 /* libpd-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx.a";
+			remoteRef = A1E3998328AD3EAD0086DEC1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A1E3998628AD3EAD0086DEC1 /* libpd-ios-multi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios-multi.a";
+			remoteRef = A1E3998528AD3EAD0086DEC1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A1E3998828AD3EAD0086DEC1 /* libpd-osx-multi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx-multi.a";
+			remoteRef = A1E3998728AD3EAD0086DEC1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		0AA329B01E33DD7800E03511 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -248,6 +346,7 @@
 			files = (
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
 				0AA329BD1E33DD7900E03511 /* Assets.xcassets in Resources */,
+				A1E3997628AD3E0E0086DEC1 /* EasyPD_Demo.pd in Resources */,
 				0AA329BB1E33DD7900E03511 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA329CE1E3479C300E03511 /* CardCell.swift in Sources */,
+				A1E3997728AD3E0E0086DEC1 /* EasyPD.m in Sources */,
 				0AFC11BE1E36B78D00D76586 /* MemoryGame.swift in Sources */,
 				0AA329B81E33DD7900E03511 /* GameController.swift in Sources */,
 				0AFC11BC1E36A1B800D76586 /* Card.swift in Sources */,
@@ -332,6 +432,11 @@
 			isa = PBXTargetDependency;
 			target = 0AA329B11E33DD7800E03511 /* Memory */;
 			targetProxy = 0ADFD6F61E3A679200848732 /* PBXContainerItemProxy */;
+		};
+		A1E3999028AD3F1B0086DEC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libpd-ios";
+			targetProxy = A1E3998F28AD3F1B0086DEC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -475,13 +580,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86SDT7KNNB;
 				INFOPLIST_FILE = Memory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasis.Memory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "\"Memory/libpd/..\"/**";
 			};
 			name = Debug;
 		};
@@ -491,13 +600,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86SDT7KNNB;
 				INFOPLIST_FILE = Memory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasis.Memory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "\"Memory/libpd/..\"/**";
 			};
 			name = Release;
 		};

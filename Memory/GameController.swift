@@ -9,13 +9,14 @@ import AVFoundation
 
 class GameController: UIViewController {
 
+    @IBOutlet weak var toggleVisual: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
 
     var counter = 0
     var time = Timer()
     
-    fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10, bottom: 10.0, right: 10)
     
     let game = MemoryGame()
     var cards = [Card]()
@@ -36,14 +37,6 @@ class GameController: UIViewController {
         collectionView.delegate = self
         collectionView.isHidden = true
         
-        APIClient.shared.getCardImages { (cardsArray, error) in
-            if let _ = error {
-                // show alert
-            }
-            
-            self.cards = cardsArray!
-            self.setupNewGame()
-        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -67,8 +60,29 @@ class GameController: UIViewController {
     @IBAction func onStartGame(_ sender: Any) {
         collectionView.isHidden = false
         
+        if self.toggleVisual.isOn {
+            APIClient.shared.getCardImages { (cardsArray, error) in
+                if let _ = error {
+                    // show alert
+                }
+                
+                self.cards = cardsArray!
+                self.setupNewGame()
+            }
+        }else{
+            APIClient.shared.getCardSingleImage { (cardsArray, error) in
+                if let _ = error {
+                    // show alert
+                }
+                
+                self.cards = cardsArray!
+                self.setupNewGame()
+            }
+        }
+        
+        
         counter = 0
-        timer.text = "0:00"
+        timer.text = "00:00"
         
         time.invalidate()
         time = Timer.scheduledTimer(
@@ -77,12 +91,28 @@ class GameController: UIViewController {
             selector: #selector(timerAction),
             userInfo: nil,
             repeats: true
+            
         )
+    }
+    
+    func secondsToMinutesSeconds(_ seconds: Int) -> (Int, Int) {
+        return ( (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    func getStringFrom(seconds: Int) -> String {
+
+        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
     
     @objc func timerAction() {
         counter += 1
-        timer.text = "0:\(counter)"
+        let (m, s) = secondsToMinutesSeconds (counter)
+        let mm = getStringFrom(seconds: m)
+        let ss = getStringFrom(seconds: s)
+        timer.text = "\(mm):\(ss)"
+        
+        print (toggleVisual.isOn)
+
     }
 }
 
@@ -150,10 +180,10 @@ extension GameController: MemoryGameProtocol {
             message: defaultAlertMessage,
             preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Nah", style: .cancel) { [weak self] (action) in
+        let cancelAction = UIAlertAction(title: "No!", style: .cancel) { [weak self] (action) in
             self?.collectionView.isHidden = true
         }
-        let playAgainAction = UIAlertAction(title: "Dale!", style: .default) { [weak self] (action) in
+        let playAgainAction = UIAlertAction(title: "Yes!", style: .default) { [weak self] (action) in
             self?.collectionView.isHidden = true
             self?.resetGame()
         }

@@ -30,8 +30,19 @@ class APIClient: AFHTTPSessionManager {
         UIImage(named: "8")!
     ];
     
+    static var constantCardImages:[UIImage] = [
+        UIImage(named: "1")!,
+        UIImage(named: "1")!,
+        UIImage(named: "1")!,
+        UIImage(named: "1")!,
+        UIImage(named: "1")!,
+        UIImage(named: "1")!,
+        UIImage(named: "1")!,
+        UIImage(named: "1")!
+    ];
+    
     static var defaultCardSounds:[UInt32] = [
-        1000,
+        1307,
         1333,
         1309,
         1310,
@@ -43,7 +54,28 @@ class APIClient: AFHTTPSessionManager {
     
     func getCardImages(completion: ((CardsArray?, Error?) -> ())?) {
         var cards = CardsArray()
+        
+        
         let cardImages = APIClient.defaultCardImages
+        let cardISounds = APIClient.defaultCardSounds
+
+        for (image, soundId) in zip(cardImages, cardISounds) {
+            let card = Card(image: image, soundId: soundId)
+            let copy = card.copy()
+            
+            cards.append(card)
+            cards.append(copy)
+        }
+        
+        completion!(cards, nil)
+    }
+    
+    
+    func getCardSingleImage(completion: ((CardsArray?, Error?) -> ())?) {
+        var cards = CardsArray()
+        
+        
+        let cardImages = APIClient.constantCardImages
         let cardISounds = APIClient.defaultCardSounds
 
         for (image, soundId) in zip(cardImages, cardISounds) {
