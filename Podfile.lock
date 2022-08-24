@@ -15,20 +15,24 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - SwiftyJSON (5.0.1)
+  - SwiftySound (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - SwiftyJSON
+  - SwiftySound
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - SwiftyJSON
+    - SwiftySound
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: 87745807b155d004d36d28f8a76a0d484788a02f
+PODFILE CHECKSUM: 19a8142d106c6e267f13c9399b42ac59833e6ac4
 
 COCOAPODS: 1.11.2

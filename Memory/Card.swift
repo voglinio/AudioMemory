@@ -7,6 +7,8 @@ import SwiftyJSON
 import AVFoundation
 import MusicalInstrument
 import MusicSymbol
+import SwiftySound
+
 
 
 class Card {

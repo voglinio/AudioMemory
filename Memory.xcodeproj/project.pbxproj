@@ -19,6 +19,24 @@
 		0AFC11BC1E36A1B800D76586 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC11BB1E36A1B800D76586 /* Card.swift */; };
 		0AFC11BE1E36B78D00D76586 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC11BD1E36B78D00D76586 /* MemoryGame.swift */; };
 		A1100DFF28B57DF500A0E738 /* MusicalInstrument in Frameworks */ = {isa = PBXBuildFile; productRef = A1100DFE28B57DF500A0E738 /* MusicalInstrument */; };
+		A1100E3428B6D75D00A0E738 /* bats.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2228B6D75C00A0E738 /* bats.wav */; };
+		A1100E3528B6D75D00A0E738 /* noteA2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2328B6D75C00A0E738 /* noteA2.wav */; };
+		A1100E3628B6D75D00A0E738 /* band.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2428B6D75C00A0E738 /* band.wav */; };
+		A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2528B6D75C00A0E738 /* noteE2.wav */; };
+		A1100E3828B6D75D00A0E738 /* briz.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2628B6D75C00A0E738 /* briz.wav */; };
+		A1100E3928B6D75D00A0E738 /* noteG2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2728B6D75C00A0E738 /* noteG2.wav */; };
+		A1100E3A28B6D75D00A0E738 /* succ.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2828B6D75C00A0E738 /* succ.wav */; };
+		A1100E3B28B6D75D00A0E738 /* noteC2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2928B6D75C00A0E738 /* noteC2.wav */; };
+		A1100E3C28B6D75D00A0E738 /* noteD2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2A28B6D75D00A0E738 /* noteD2.wav */; };
+		A1100E3D28B6D75D00A0E738 /* noteB2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2B28B6D75D00A0E738 /* noteB2.wav */; };
+		A1100E3E28B6D75D00A0E738 /* blin.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2C28B6D75D00A0E738 /* blin.wav */; };
+		A1100E3F28B6D75D00A0E738 /* blow.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2D28B6D75D00A0E738 /* blow.wav */; };
+		A1100E4028B6D75D00A0E738 /* bass.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2E28B6D75D00A0E738 /* bass.wav */; };
+		A1100E4128B6D75D00A0E738 /* buzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E2F28B6D75D00A0E738 /* buzz.wav */; };
+		A1100E4228B6D75D00A0E738 /* miss.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3028B6D75D00A0E738 /* miss.wav */; };
+		A1100E4328B6D75D00A0E738 /* noteC3.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3128B6D75D00A0E738 /* noteC3.wav */; };
+		A1100E4428B6D75D00A0E738 /* bips.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3228B6D75D00A0E738 /* bips.wav */; };
+		A1100E4528B6D75D00A0E738 /* noteF2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3328B6D75D00A0E738 /* noteF2.wav */; };
 		A1E3997628AD3E0E0086DEC1 /* EasyPD_Demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */; };
 		A1E3997728AD3E0E0086DEC1 /* EasyPD.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E3997528AD3E0E0086DEC1 /* EasyPD.m */; };
 		A1E3999128AD3F310086DEC1 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3998228AD3EAD0086DEC1 /* libpd-ios.a */; };
@@ -88,6 +106,24 @@
 		0AFC11BD1E36B78D00D76586 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C659CB8F1716FE7B3D4415 /* Pods-Memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.debug.xcconfig"; sourceTree = "<group>"; };
+		A1100E2228B6D75C00A0E738 /* bats.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bats.wav; sourceTree = "<group>"; };
+		A1100E2328B6D75C00A0E738 /* noteA2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteA2.wav; sourceTree = "<group>"; };
+		A1100E2428B6D75C00A0E738 /* band.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = band.wav; sourceTree = "<group>"; };
+		A1100E2528B6D75C00A0E738 /* noteE2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteE2.wav; sourceTree = "<group>"; };
+		A1100E2628B6D75C00A0E738 /* briz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = briz.wav; sourceTree = "<group>"; };
+		A1100E2728B6D75C00A0E738 /* noteG2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteG2.wav; sourceTree = "<group>"; };
+		A1100E2828B6D75C00A0E738 /* succ.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = succ.wav; sourceTree = "<group>"; };
+		A1100E2928B6D75C00A0E738 /* noteC2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteC2.wav; sourceTree = "<group>"; };
+		A1100E2A28B6D75D00A0E738 /* noteD2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteD2.wav; sourceTree = "<group>"; };
+		A1100E2B28B6D75D00A0E738 /* noteB2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteB2.wav; sourceTree = "<group>"; };
+		A1100E2C28B6D75D00A0E738 /* blin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blin.wav; sourceTree = "<group>"; };
+		A1100E2D28B6D75D00A0E738 /* blow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blow.wav; sourceTree = "<group>"; };
+		A1100E2E28B6D75D00A0E738 /* bass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass.wav; sourceTree = "<group>"; };
+		A1100E2F28B6D75D00A0E738 /* buzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzz.wav; sourceTree = "<group>"; };
+		A1100E3028B6D75D00A0E738 /* miss.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miss.wav; sourceTree = "<group>"; };
+		A1100E3128B6D75D00A0E738 /* noteC3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteC3.wav; sourceTree = "<group>"; };
+		A1100E3228B6D75D00A0E738 /* bips.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bips.wav; sourceTree = "<group>"; };
+		A1100E3328B6D75D00A0E738 /* noteF2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteF2.wav; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1E3997328AD3E0E0086DEC1 /* EasyPD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyPD.h; sourceTree = "<group>"; };
 		A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyPD_Demo.pd; sourceTree = "<group>"; };
@@ -141,6 +177,7 @@
 		0AA329B41E33DD7900E03511 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				A1100E1E28B6D6F700A0E738 /* Sounds */,
 				A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */,
 				A1E3997328AD3E0E0086DEC1 /* EasyPD.h */,
 				A1E3997528AD3E0E0086DEC1 /* EasyPD.m */,
@@ -208,6 +245,31 @@
 				0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1100E1E28B6D6F700A0E738 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A1100E2428B6D75C00A0E738 /* band.wav */,
+				A1100E2E28B6D75D00A0E738 /* bass.wav */,
+				A1100E2228B6D75C00A0E738 /* bats.wav */,
+				A1100E3228B6D75D00A0E738 /* bips.wav */,
+				A1100E2C28B6D75D00A0E738 /* blin.wav */,
+				A1100E2D28B6D75D00A0E738 /* blow.wav */,
+				A1100E2628B6D75C00A0E738 /* briz.wav */,
+				A1100E2F28B6D75D00A0E738 /* buzz.wav */,
+				A1100E3028B6D75D00A0E738 /* miss.wav */,
+				A1100E2328B6D75C00A0E738 /* noteA2.wav */,
+				A1100E2B28B6D75D00A0E738 /* noteB2.wav */,
+				A1100E2928B6D75C00A0E738 /* noteC2.wav */,
+				A1100E3128B6D75D00A0E738 /* noteC3.wav */,
+				A1100E2A28B6D75D00A0E738 /* noteD2.wav */,
+				A1100E2528B6D75C00A0E738 /* noteE2.wav */,
+				A1100E3328B6D75D00A0E738 /* noteF2.wav */,
+				A1100E2728B6D75C00A0E738 /* noteG2.wav */,
+				A1100E2828B6D75C00A0E738 /* succ.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		A1E3997B28AD3EAD0086DEC1 /* Products */ = {
@@ -352,9 +414,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1100E4528B6D75D00A0E738 /* noteF2.wav in Resources */,
+				A1100E3E28B6D75D00A0E738 /* blin.wav in Resources */,
+				A1100E3428B6D75D00A0E738 /* bats.wav in Resources */,
+				A1100E3928B6D75D00A0E738 /* noteG2.wav in Resources */,
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
+				A1100E3628B6D75D00A0E738 /* band.wav in Resources */,
+				A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */,
+				A1100E4428B6D75D00A0E738 /* bips.wav in Resources */,
+				A1100E4328B6D75D00A0E738 /* noteC3.wav in Resources */,
+				A1100E3C28B6D75D00A0E738 /* noteD2.wav in Resources */,
+				A1100E3B28B6D75D00A0E738 /* noteC2.wav in Resources */,
+				A1100E3F28B6D75D00A0E738 /* blow.wav in Resources */,
 				0AA329BD1E33DD7900E03511 /* Assets.xcassets in Resources */,
+				A1100E4228B6D75D00A0E738 /* miss.wav in Resources */,
+				A1100E3D28B6D75D00A0E738 /* noteB2.wav in Resources */,
+				A1100E3528B6D75D00A0E738 /* noteA2.wav in Resources */,
+				A1100E4028B6D75D00A0E738 /* bass.wav in Resources */,
+				A1100E3828B6D75D00A0E738 /* briz.wav in Resources */,
 				A1E3997628AD3E0E0086DEC1 /* EasyPD_Demo.pd in Resources */,
+				A1100E4128B6D75D00A0E738 /* buzz.wav in Resources */,
+				A1100E3A28B6D75D00A0E738 /* succ.wav in Resources */,
 				0AA329BB1E33DD7900E03511 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,11 +458,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Memory/Pods-Memory-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

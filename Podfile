@@ -6,5 +6,6 @@ target 'Memory' do
   
   pod 'AFNetworking', '~> 4.0'
   pod 'SwiftyJSON'
-  
+  pod 'SwiftySound'
+
 end

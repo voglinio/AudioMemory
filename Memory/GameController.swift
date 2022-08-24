@@ -6,6 +6,7 @@ import UIKit
 import AFNetworking
 // import this
 import AVFoundation
+import SwiftySound
 
 class GameController: UIViewController {
 
@@ -31,6 +32,7 @@ class GameController: UIViewController {
 
         // to play sound
         
+        Sound.play(file: "noteA2", fileExtension: "wav", numberOfLoops: 2)
         game.delegate = self
         
         collectionView.dataSource = self
