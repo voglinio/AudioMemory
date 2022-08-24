@@ -5,6 +5,8 @@
 import UIKit
 import SwiftyJSON
 import AVFoundation
+import MusicalInstrument
+import MusicSymbol
 
 
 class Card {
@@ -15,6 +17,7 @@ class Card {
     var shown: Bool = false
     var artworkURL: UIImage!
     var soundId: UInt32 = 1016
+    var note: String!
     
     static var allCards = [Card]()
 
@@ -38,6 +41,13 @@ class Card {
         self.soundId = soundId
     }
     
+    init(image: UIImage, note: String) {
+        self.id = NSUUID().uuidString
+        self.shown = false
+        self.artworkURL = image
+        self.note = note
+    }
+    
     // MARK: - Methods
     
     func equals(_ card: Card) -> Bool {
@@ -49,7 +59,13 @@ class Card {
     }
     
     func play() {
-        AudioServicesPlaySystemSound(soundId)
+        //AudioServicesPlaySystemSound(soundId)
+        let piano = Piano.default
+        piano.play(at: Pitch(stringLiteral: self.note))
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            piano.stop(at: Pitch(stringLiteral: self.note))
+        }
+        
     }
 }
 

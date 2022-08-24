@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		0ADFD6F41E3A679200848732 /* MemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFD6F31E3A679200848732 /* MemoryTests.swift */; };
 		0AFC11BC1E36A1B800D76586 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC11BB1E36A1B800D76586 /* Card.swift */; };
 		0AFC11BE1E36B78D00D76586 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFC11BD1E36B78D00D76586 /* MemoryGame.swift */; };
+		A1100DFF28B57DF500A0E738 /* MusicalInstrument in Frameworks */ = {isa = PBXBuildFile; productRef = A1100DFE28B57DF500A0E738 /* MusicalInstrument */; };
 		A1E3997628AD3E0E0086DEC1 /* EasyPD_Demo.pd in Resources */ = {isa = PBXBuildFile; fileRef = A1E3997428AD3E0E0086DEC1 /* EasyPD_Demo.pd */; };
 		A1E3997728AD3E0E0086DEC1 /* EasyPD.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E3997528AD3E0E0086DEC1 /* EasyPD.m */; };
 		A1E3999128AD3F310086DEC1 /* libpd-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3998228AD3EAD0086DEC1 /* libpd-ios.a */; };
@@ -101,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E3999128AD3F310086DEC1 /* libpd-ios.a in Frameworks */,
+				A1100DFF28B57DF500A0E738 /* MusicalInstrument in Frameworks */,
 				F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +240,9 @@
 				A1E3999028AD3F1B0086DEC1 /* PBXTargetDependency */,
 			);
 			name = Memory;
+			packageProductDependencies = (
+				A1100DFE28B57DF500A0E738 /* MusicalInstrument */,
+			);
 			productName = Memory;
 			productReference = 0AA329B21E33DD7900E03511 /* Memory.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +297,9 @@
 				Base,
 			);
 			mainGroup = 0AA329A91E33DD7800E03511;
+			packageReferences = (
+				A1100DFD28B57DF500A0E738 /* XCRemoteSwiftPackageReference "MusicalInstrument" */,
+			);
 			productRefGroup = 0AA329B31E33DD7900E03511 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -510,13 +518,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -565,11 +573,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -583,8 +592,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86SDT7KNNB;
 				INFOPLIST_FILE = Memory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasis.Memory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
@@ -603,8 +615,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86SDT7KNNB;
 				INFOPLIST_FILE = Memory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasis.Memory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
@@ -618,7 +633,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MemoryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Xiomara.MemoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -631,7 +650,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MemoryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Xiomara.MemoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -670,6 +693,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A1100DFD28B57DF500A0E738 /* XCRemoteSwiftPackageReference "MusicalInstrument" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/voglinio/MusicalInstrument/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1100DFE28B57DF500A0E738 /* MusicalInstrument */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1100DFD28B57DF500A0E738 /* XCRemoteSwiftPackageReference "MusicalInstrument" */;
+			productName = MusicalInstrument;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AA329AA1E33DD7800E03511 /* Project object */;
 }

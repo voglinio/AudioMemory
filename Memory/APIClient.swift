@@ -5,6 +5,7 @@
 import Foundation
 import AFNetworking
 import SwiftyJSON
+import MusicSymbol
 
 typealias CardsArray = [Card]
 
@@ -41,6 +42,9 @@ class APIClient: AFHTTPSessionManager {
         UIImage(named: "1")!
     ];
     
+    static var errorSound: UInt32 = 1073
+    static var successSound: UInt32 = 1001
+    
     static var defaultCardSounds:[UInt32] = [
         1307,
         1333,
@@ -52,16 +56,29 @@ class APIClient: AFHTTPSessionManager {
         1302
     ];
     
+    static var defaulNotes:[String] = [
+        "A2",
+        "B2",
+        "C2",
+        "C3",
+        "D2",
+        "E2",
+        "F2",
+        "G2"
+    ];
+    
     func getCardImages(completion: ((CardsArray?, Error?) -> ())?) {
         var cards = CardsArray()
         
         
         let cardImages = APIClient.defaultCardImages
         let cardISounds = APIClient.defaultCardSounds
+        let cardINotes = APIClient.defaulNotes
 
-        for (image, soundId) in zip(cardImages, cardISounds) {
-            let card = Card(image: image, soundId: soundId)
+        for (image, note) in zip(cardImages, cardINotes) {
+            let card = Card(image: image, note: note)
             let copy = card.copy()
+            copy.note = card.note
             
             cards.append(card)
             cards.append(copy)
@@ -77,10 +94,14 @@ class APIClient: AFHTTPSessionManager {
         
         let cardImages = APIClient.constantCardImages
         let cardISounds = APIClient.defaultCardSounds
+        let cardINotes = APIClient.defaulNotes
 
-        for (image, soundId) in zip(cardImages, cardISounds) {
-            let card = Card(image: image, soundId: soundId)
+
+        for (image, soundId) in zip(cardImages, cardINotes) {
+            let card = Card(image: image, note: soundId)
             let copy = card.copy()
+            copy.note = card.note
+
             
             cards.append(card)
             cards.append(copy)

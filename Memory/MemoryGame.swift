@@ -4,6 +4,8 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+
 
 // MARK: - MemoryGameProtocol
 protocol MemoryGameProtocol {
@@ -69,13 +71,25 @@ class MemoryGame {
             
             if card.equals(unmatched) {
                 cardsShown.append(card)
+                let delayTime2 = DispatchTime.now() + 0.5
+                DispatchQueue.main.asyncAfter(deadline: delayTime2) {
+                    AudioServicesPlaySystemSound(APIClient.successSound)
+                }
+
             } else {
                 let secondCard = cardsShown.removeLast()
                 
                 let delayTime = DispatchTime.now() + 1.0
+                let delayTime2 = DispatchTime.now() + 0.5
+
                 DispatchQueue.main.asyncAfter(deadline: delayTime) {
                     self.delegate?.memoryGame(self, hideCards:[card, secondCard])
                 }
+                
+                DispatchQueue.main.asyncAfter(deadline: delayTime2) {
+                    AudioServicesPlaySystemSound(APIClient.errorSound)
+                }
+
             }
             
         } else {

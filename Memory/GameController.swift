@@ -141,6 +141,7 @@ extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         
         if cell.shown { return }
+        print (cell.card)
         cell.card?.play()
         game.didSelectCard(cell.card)
         
