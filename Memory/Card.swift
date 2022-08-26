@@ -20,7 +20,9 @@ class Card {
     var artworkURL: UIImage!
     var soundId: UInt32 = 1016
     var note: String!
-    
+    var noise: String!
+    var sound: Sound!
+
     static var allCards = [Card]()
 
     init(card: Card) {
@@ -50,6 +52,15 @@ class Card {
         self.note = note
     }
     
+    init(image: UIImage, note: String, noise: String) {
+        self.id = NSUUID().uuidString
+        self.shown = false
+        self.artworkURL = image
+        self.note = note
+        self.noise = noise
+       
+    }
+    
     // MARK: - Methods
     
     func equals(_ card: Card) -> Bool {
@@ -60,12 +71,23 @@ class Card {
         return Card(card: self)
     }
     
-    func play() {
-        //AudioServicesPlaySystemSound(soundId)
-        let piano = Piano.default
-        piano.play(at: Pitch(stringLiteral: self.note))
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            piano.stop(at: Pitch(stringLiteral: self.note))
+    func play(isOn: Bool = true) {
+        // 1st version
+        // AudioServicesPlaySystemSound(soundId)
+        
+        // 2nd version using Piano/Violin
+//        let piano = Piano.default
+//        piano.play(at: Pitch(stringLiteral: self.note))
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+//            piano.stop(at: Pitch(stringLiteral: self.note))
+//        }
+        
+        // 3rd version using Manos's wav files
+        if isOn  {
+            Sound.play(file: self.note, fileExtension: "wav")
+
+        }else{
+            Sound.play(file: self.noise, fileExtension: "wav")
         }
         
     }

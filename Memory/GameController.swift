@@ -25,19 +25,28 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+
 
         // create a sound ID, in this case its the tweet sound.
         //let systemSoundID: SystemSoundID = 1016
 
         // to play sound
         
-        Sound.play(file: "noteA2", fileExtension: "wav", numberOfLoops: 2)
+        //Sound.play(file: "noteA2", fileExtension: "wav", numberOfLoops: 2)
         game.delegate = self
         
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isHidden = true
+        
+        APIClient.shared.getCardImages { (cardsArray, error) in
+            if let _ = error {
+                // show alert
+            }
+
+            self.cards = cardsArray!
+            self.setupNewGame()
+        }
         
     }
     
@@ -62,25 +71,25 @@ class GameController: UIViewController {
     @IBAction func onStartGame(_ sender: Any) {
         collectionView.isHidden = false
         
-        if self.toggleVisual.isOn {
-            APIClient.shared.getCardImages { (cardsArray, error) in
-                if let _ = error {
-                    // show alert
-                }
-                
-                self.cards = cardsArray!
-                self.setupNewGame()
-            }
-        }else{
-            APIClient.shared.getCardSingleImage { (cardsArray, error) in
-                if let _ = error {
-                    // show alert
-                }
-                
-                self.cards = cardsArray!
-                self.setupNewGame()
-            }
-        }
+//        if self.toggleVisual.isOn {
+//            APIClient.shared.getCardImages { (cardsArray, error) in
+//                if let _ = error {
+//                    // show alert
+//                }
+//
+//                self.cards = cardsArray!
+//                self.setupNewGame()
+//            }
+//        }else{
+//            APIClient.shared.getCardSingleImage { (cardsArray, error) in
+//                if let _ = error {
+//                    // show alert
+//                }
+//
+//                self.cards = cardsArray!
+//                self.setupNewGame()
+//            }
+//        }
         
         
         counter = 0
@@ -142,9 +151,24 @@ extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         
-        if cell.shown { return }
-        print (cell.card)
-        cell.card?.play()
+        if cell.shown {
+            
+            switch UIDevice.current.userInterfaceIdiom {
+                case .phone:
+                    // It's an iPhone
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    return
+                case .pad:
+                    // It's an iPad
+                    AudioServicesPlaySystemSound(1006) // LowPower
+                    return
+            
+                @unknown default:
+                    // Uh, oh! What could it be?
+                    return
+            }
+        }
+        cell.card?.play(isOn: self.toggleVisual.isOn)
         game.didSelectCard(cell.card)
         
         collectionView.deselectItem(at: indexPath, animated:true)

@@ -21,29 +21,31 @@ class APIClient: AFHTTPSessionManager {
     static let shared = APIClient()
     
     static var defaultCardImages:[UIImage] = [
-        UIImage(named: "1")!,
-        UIImage(named: "2")!,
-        UIImage(named: "3")!,
-        UIImage(named: "4")!,
-        UIImage(named: "5")!,
-        UIImage(named: "6")!,
-        UIImage(named: "7")!,
-        UIImage(named: "8")!
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!
+
     ];
     
     static var constantCardImages:[UIImage] = [
-        UIImage(named: "1")!,
-        UIImage(named: "1")!,
-        UIImage(named: "1")!,
-        UIImage(named: "1")!,
-        UIImage(named: "1")!,
-        UIImage(named: "1")!,
-        UIImage(named: "1")!,
-        UIImage(named: "1")!
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!,
+        UIImage(named: "card")!
     ];
     
     static var errorSound: UInt32 = 1073
     static var successSound: UInt32 = 1001
+    
     
     static var defaultCardSounds:[UInt32] = [
         1307,
@@ -56,15 +58,28 @@ class APIClient: AFHTTPSessionManager {
         1302
     ];
     
+    static var errorWav: String = "miss"
+    static var succeWav: String = "succ"
+    
     static var defaulNotes:[String] = [
-        "A2",
-        "B2",
-        "C2",
-        "C3",
-        "D2",
-        "E2",
-        "F2",
-        "G2"
+        "noteA2",
+        "noteB2",
+        "noteC2",
+        "noteC3",
+        "noteD2",
+        "noteE2",
+        "noteF2",
+        "noteG2"
+    ];
+    static var defaulNoise:[String] = [
+        "band",
+        "bass",
+        "bats",
+        "bips",
+        "blin",
+        "blow",
+        "briz",
+        "buss"
     ];
     
     func getCardImages(completion: ((CardsArray?, Error?) -> ())?) {
@@ -74,12 +89,14 @@ class APIClient: AFHTTPSessionManager {
         let cardImages = APIClient.defaultCardImages
         let cardISounds = APIClient.defaultCardSounds
         let cardINotes = APIClient.defaulNotes
+        let cardINoise = APIClient.defaulNoise
 
-        for (image, note) in zip(cardImages, cardINotes) {
-            let card = Card(image: image, note: note)
+        for (image, (note, noise)) in zip(cardImages, zip(cardINotes, cardINoise)) {
+            let card = Card(image: image, note: note, noise: noise)
             let copy = card.copy()
             copy.note = card.note
-            
+            copy.noise = card.noise
+
             cards.append(card)
             cards.append(copy)
         }

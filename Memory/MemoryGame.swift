@@ -5,6 +5,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import SwiftySound
 
 
 // MARK: - MemoryGameProtocol
@@ -71,23 +72,22 @@ class MemoryGame {
             
             if card.equals(unmatched) {
                 cardsShown.append(card)
-                let delayTime2 = DispatchTime.now() + 0.5
+                let delayTime2 = DispatchTime.now() + 1.0
                 DispatchQueue.main.asyncAfter(deadline: delayTime2) {
-                    AudioServicesPlaySystemSound(APIClient.successSound)
+                    Sound.play(file: APIClient.succeWav, fileExtension: "wav")
                 }
 
             } else {
                 let secondCard = cardsShown.removeLast()
                 
                 let delayTime = DispatchTime.now() + 1.0
-                let delayTime2 = DispatchTime.now() + 0.5
+                let delayTime2 = DispatchTime.now() + 1.0
 
                 DispatchQueue.main.asyncAfter(deadline: delayTime) {
                     self.delegate?.memoryGame(self, hideCards:[card, secondCard])
                 }
-                
                 DispatchQueue.main.asyncAfter(deadline: delayTime2) {
-                    AudioServicesPlaySystemSound(APIClient.errorSound)
+                    Sound.play(file: APIClient.errorWav, fileExtension: "wav")
                 }
 
             }
