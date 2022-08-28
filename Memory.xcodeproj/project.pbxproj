@@ -41,6 +41,7 @@
 		A154914228BB295100AD519D /* double_tap_top_left.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913E28BB295100AD519D /* double_tap_top_left.wav */; };
 		A154914328BB295100AD519D /* bravo.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913F28BB295100AD519D /* bravo.wav */; };
 		A154914528BB744E00AD519D /* begin_play.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914428BB744E00AD519D /* begin_play.wav */; };
+		A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914628BB795800AD519D /* game_intro_xtd_v2.wav */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		A154913E28BB295100AD519D /* double_tap_top_left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = double_tap_top_left.wav; sourceTree = "<group>"; };
 		A154913F28BB295100AD519D /* bravo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bravo.wav; sourceTree = "<group>"; };
 		A154914428BB744E00AD519D /* begin_play.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = begin_play.wav; sourceTree = "<group>"; };
+		A154914628BB795800AD519D /* game_intro_xtd_v2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_intro_xtd_v2.wav; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +213,7 @@
 		A1100E1E28B6D6F700A0E738 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A154914628BB795800AD519D /* game_intro_xtd_v2.wav */,
 				A154914428BB744E00AD519D /* begin_play.wav */,
 				A154913F28BB295100AD519D /* bravo.wav */,
 				A154913C28BB295100AD519D /* double_tap_bottom_right.wav */,
@@ -351,6 +354,7 @@
 				A1100E4028B6D75D00A0E738 /* bass.wav in Resources */,
 				A1100E3828B6D75D00A0E738 /* briz.wav in Resources */,
 				A1100E4128B6D75D00A0E738 /* buzz.wav in Resources */,
+				A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */,
 				A154914528BB744E00AD519D /* begin_play.wav in Resources */,
 				A154914328BB295100AD519D /* bravo.wav in Resources */,
 				A1100E3A28B6D75D00A0E738 /* succ.wav in Resources */,

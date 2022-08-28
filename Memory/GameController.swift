@@ -28,10 +28,13 @@ class GameController: UIViewController {
     let topLeftSoundUrl = Bundle.main.url(forResource: "double_tap_top_left", withExtension: "wav")
     let bottomRightSoundUrl = Bundle.main.url(forResource: "double_tap_bottom_right", withExtension: "wav")
     let bravoSoundUrl = Bundle.main.url(forResource: "bravo", withExtension: "wav")
+    let beginPlaySoundUrl = Bundle.main.url(forResource: "begin_play", withExtension: "wav")
+
     var introSound: Sound!
     var topLeftSound: Sound!
     var bottomRightSound: Sound!
     var bravoSound: Sound!
+    var beginPlaySound: Sound!
 
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10, bottom: 10.0, right: 10)
@@ -91,6 +94,9 @@ class GameController: UIViewController {
         
         bravoSound = Sound (url: bravoSoundUrl!)
         bravoSound.volume = 1.0
+        
+        beginPlaySound = Sound(url: beginPlaySoundUrl!)
+        beginPlaySound.volume = 1.0
 
     }
     
@@ -171,15 +177,13 @@ class GameController: UIViewController {
            // Calibration phase upper left
            if self.game.gamePhase == phaseUpperLeft {
                if selectedIndexPath.row == 0 {
-                   bravoSound.play{ completed in
-                   DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-                       self.bottomRightSound.play {
+                   bravoSound.play{
+                       completed in
+                       self.bottomRightSound.play{
                            completed in
-                           print("completed bottom right :  \(completed)")
                            self.game.gamePhase = phaseLowerRight
+
                        }
-                   }
-                       
                    }
                    return
                }else{
@@ -190,7 +194,16 @@ class GameController: UIViewController {
            // Calibration phase lower right
            if self.game.gamePhase == phaseLowerRight {
                if selectedIndexPath.row == 15{
-                   bravoSound.play()
+                   bravoSound.play {
+                       completed in
+                       print("completed bottom right :  \(completed)")
+                       self.game.gamePhase = phaseLowerRight
+                       
+                       self.beginPlaySound.play{
+                           completed in
+                           self.game.gamePhase = phasePlay
+                       }
+                   }
                    return
                }else{
                    return
