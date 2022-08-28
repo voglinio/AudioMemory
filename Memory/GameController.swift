@@ -7,6 +7,13 @@ import AFNetworking
 // import this
 import AVFoundation
 import SwiftySound
+/*
+    Καλώς ήρθες στο παιχνίδι ακουστικής μνήμης! Η συσκευή που κρατάς στα χέρια σου έχει ένα
+    ειδικό πλαίσιο, τέσσερα επί τέσσερα, με δεκαέξι κουμπιά. Σε κάθε κουμπί αντιστοιχεί ένας
+    ήχος και υπάρχουν οχτώ διαφορετικοί ήχοι. Θα πρέπει να πατήσεις κάθε κουμπί με διπλό
+    ταπ και θα ακούσεις έναν ήχο. Αν ταιριάξεις τους ήχους θα ακούσεις έναν ήχο επιτυχίας. Αν όχι θα ακούσεις έναν ήχο αποτυχίας.
+ */
+
 
 class GameController: UIViewController {
 
@@ -16,6 +23,16 @@ class GameController: UIViewController {
 
     var counter = 0
     var time = Timer()
+    var timerRepeatIntro = Timer()
+    let introUrl = Bundle.main.url(forResource: "game_intro", withExtension: "wav")
+    let topLeftSoundUrl = Bundle.main.url(forResource: "double_tap_top_left", withExtension: "wav")
+    let bottomRightSoundUrl = Bundle.main.url(forResource: "double_tap_bottom_right", withExtension: "wav")
+    let bravoSoundUrl = Bundle.main.url(forResource: "bravo", withExtension: "wav")
+    var introSound: Sound!
+    var topLeftSound: Sound!
+    var bottomRightSound: Sound!
+    var bravoSound: Sound!
+
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10, bottom: 10.0, right: 10)
     
@@ -24,20 +41,32 @@ class GameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpDoubleTap()
         
-
-
-        // create a sound ID, in this case its the tweet sound.
-        //let systemSoundID: SystemSoundID = 1016
-
-        // to play sound
+        initSounds()
         
-        //Sound.play(file: "noteA2", fileExtension: "wav", numberOfLoops: 2)
+        game.gamePhase = phaseJustStarted
+        
         game.delegate = self
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.isHidden = true
+        collectionView.isHidden = false
+        collectionView.isUserInteractionEnabled = true
+        
+
+        introSound.play {
+            completed in
+            print("completed intro :  \(completed)")
+            self.game.gamePhase = phaseIntro
+            self.topLeftSound.play{
+                completed in
+                print("completed topleft : \(completed)")
+                self.game.gamePhase = phaseUpperLeft
+            }
+
+        }
+        
         
         APIClient.shared.getCardImages { (cardsArray, error) in
             if let _ = error {
@@ -48,6 +77,21 @@ class GameController: UIViewController {
             self.setupNewGame()
         }
         
+    }
+    
+    func initSounds(){
+        introSound = Sound(url: introUrl!)!
+        introSound.volume = 1.0
+        
+        topLeftSound = Sound(url: topLeftSoundUrl!)!
+        topLeftSound.volume = 1.0
+
+        bottomRightSound = Sound(url: bottomRightSoundUrl!)!
+        bottomRightSound.volume = 1.0
+        
+        bravoSound = Sound (url: bravoSoundUrl!)
+        bravoSound.volume = 1.0
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -69,27 +113,7 @@ class GameController: UIViewController {
     }
     
     @IBAction func onStartGame(_ sender: Any) {
-        collectionView.isHidden = false
-        
-//        if self.toggleVisual.isOn {
-//            APIClient.shared.getCardImages { (cardsArray, error) in
-//                if let _ = error {
-//                    // show alert
-//                }
-//
-//                self.cards = cardsArray!
-//                self.setupNewGame()
-//            }
-//        }else{
-//            APIClient.shared.getCardSingleImage { (cardsArray, error) in
-//                if let _ = error {
-//                    // show alert
-//                }
-//
-//                self.cards = cardsArray!
-//                self.setupNewGame()
-//            }
-//        }
+        //collectionView.isHidden = false
         
         
         counter = 0
@@ -102,7 +126,6 @@ class GameController: UIViewController {
             selector: #selector(timerAction),
             userInfo: nil,
             repeats: true
-            
         )
     }
     
@@ -121,11 +144,90 @@ class GameController: UIViewController {
         let mm = getStringFrom(seconds: m)
         let ss = getStringFrom(seconds: s)
         timer.text = "\(mm):\(ss)"
-        
-        print (toggleVisual.isOn)
-
     }
+    
+    
+    private var doubleTapGesture: UITapGestureRecognizer!
+    func setUpDoubleTap() {
+       doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCollectionView))
+       doubleTapGesture.numberOfTapsRequired = 2
+       collectionView.addGestureRecognizer(doubleTapGesture)
+       doubleTapGesture.delaysTouchesBegan = true
+    }
+    
+    
+    @objc func didDoubleTapCollectionView() {
+       let pointInCollectionView = doubleTapGesture.location(in: collectionView)
+       
+        if self.game.gamePhase == phaseJustStarted {
+            return
+        }
+        if self.game.gamePhase == phaseIntro {
+            return
+        }
+
+       if let selectedIndexPath = collectionView.indexPathForItem(at: pointInCollectionView) {
+           
+           // Calibration phase upper left
+           if self.game.gamePhase == phaseUpperLeft {
+               if selectedIndexPath.row == 0 {
+                   bravoSound.play{ completed in
+                   DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+                       self.bottomRightSound.play {
+                           completed in
+                           print("completed bottom right :  \(completed)")
+                           self.game.gamePhase = phaseLowerRight
+                       }
+                   }
+                       
+                   }
+                   return
+               }else{
+                   return
+               }
+           }
+
+           // Calibration phase lower right
+           if self.game.gamePhase == phaseLowerRight {
+               if selectedIndexPath.row == 15{
+                   bravoSound.play()
+                   return
+               }else{
+                   return
+               }
+           }
+
+           let cell = collectionView.cellForItem(at: selectedIndexPath) as! CardCell
+
+           if cell.shown {
+               switch UIDevice.current.model {
+                   case "iPhone":
+                       // It's an iPhone
+                       AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                       print ("phone")
+                       return
+                   case "iPad":
+                       // It's an iPad
+                       AudioServicesPlaySystemSound(1006) // LowPower
+                       print ("pad")
+                       return
+               
+                   default:
+                       // Uh, oh! What could it be?
+                       AudioServicesPlaySystemSound(1006) // LowPower
+                       AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                       return
+               }
+           }
+           cell.card?.play(isOn: self.toggleVisual.isOn)
+           game.didSelectCard(cell.card)
+           
+           collectionView.deselectItem(at: selectedIndexPath, animated:true)
+       }
+   }
+    
 }
+
 
 // MARK: - CollectionView Delegate Methods
 extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -151,27 +253,43 @@ extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         
+        if self.game.gamePhase == phaseJustStarted {
+            return
+        }
+        if self.game.gamePhase == phaseIntro {
+            return
+        }
+        if self.game.gamePhase == phaseUpperLeft {
+            return
+        }
+        if self.game.gamePhase == phaseLowerRight {
+            return
+        }
+
         if cell.shown {
-            
-            switch UIDevice.current.userInterfaceIdiom {
-                case .phone:
+            switch UIDevice.current.model {
+                case "iPhone":
                     // It's an iPhone
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    print ("phone")
                     return
-                case .pad:
+                case "iPad":
                     // It's an iPad
                     AudioServicesPlaySystemSound(1006) // LowPower
+                    print ("pad")
                     return
             
-                @unknown default:
+                default:
                     // Uh, oh! What could it be?
+                    AudioServicesPlaySystemSound(1006) // LowPower
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     return
             }
         }
-        cell.card?.play(isOn: self.toggleVisual.isOn)
-        game.didSelectCard(cell.card)
-        
-        collectionView.deselectItem(at: indexPath, animated:true)
+//        cell.card?.play(isOn: self.toggleVisual.isOn)
+//        game.didSelectCard(cell.card)
+//
+//        collectionView.deselectItem(at: indexPath, animated:true)
 
     }
 }

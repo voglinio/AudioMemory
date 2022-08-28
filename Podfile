@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '14.3'
+platform :ios, '12.3'
 use_frameworks!
 
 target 'Memory' do

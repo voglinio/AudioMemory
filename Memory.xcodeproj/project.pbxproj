@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,7 +36,11 @@
 		A1100E4328B6D75D00A0E738 /* noteC3.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3128B6D75D00A0E738 /* noteC3.wav */; };
 		A1100E4428B6D75D00A0E738 /* bips.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3228B6D75D00A0E738 /* bips.wav */; };
 		A1100E4528B6D75D00A0E738 /* noteF2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1100E3328B6D75D00A0E738 /* noteF2.wav */; };
-		A1100E8628B7FB3F00A0E738 /* MusicalInstrument in Frameworks */ = {isa = PBXBuildFile; productRef = A1100E8528B7FB3F00A0E738 /* MusicalInstrument */; };
+		A154914028BB295100AD519D /* double_tap_bottom_right.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913C28BB295100AD519D /* double_tap_bottom_right.wav */; };
+		A154914128BB295100AD519D /* game_intro.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913D28BB295100AD519D /* game_intro.wav */; };
+		A154914228BB295100AD519D /* double_tap_top_left.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913E28BB295100AD519D /* double_tap_top_left.wav */; };
+		A154914328BB295100AD519D /* bravo.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913F28BB295100AD519D /* bravo.wav */; };
+		A154914528BB744E00AD519D /* begin_play.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914428BB744E00AD519D /* begin_play.wav */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,11 @@
 		A1100E3128B6D75D00A0E738 /* noteC3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteC3.wav; sourceTree = "<group>"; };
 		A1100E3228B6D75D00A0E738 /* bips.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bips.wav; sourceTree = "<group>"; };
 		A1100E3328B6D75D00A0E738 /* noteF2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noteF2.wav; sourceTree = "<group>"; };
+		A154913C28BB295100AD519D /* double_tap_bottom_right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = double_tap_bottom_right.wav; sourceTree = "<group>"; };
+		A154913D28BB295100AD519D /* game_intro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_intro.wav; sourceTree = "<group>"; };
+		A154913E28BB295100AD519D /* double_tap_top_left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = double_tap_top_left.wav; sourceTree = "<group>"; };
+		A154913F28BB295100AD519D /* bravo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bravo.wav; sourceTree = "<group>"; };
+		A154914428BB744E00AD519D /* begin_play.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = begin_play.wav; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1100E8628B7FB3F00A0E738 /* MusicalInstrument in Frameworks */,
 				F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +211,11 @@
 		A1100E1E28B6D6F700A0E738 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A154914428BB744E00AD519D /* begin_play.wav */,
+				A154913F28BB295100AD519D /* bravo.wav */,
+				A154913C28BB295100AD519D /* double_tap_bottom_right.wav */,
+				A154913E28BB295100AD519D /* double_tap_top_left.wav */,
+				A154913D28BB295100AD519D /* game_intro.wav */,
 				A1100E2428B6D75C00A0E738 /* band.wav */,
 				A1100E2E28B6D75D00A0E738 /* bass.wav */,
 				A1100E2228B6D75C00A0E738 /* bats.wav */,
@@ -244,7 +257,6 @@
 			);
 			name = Memory;
 			packageProductDependencies = (
-				A1100E8528B7FB3F00A0E738 /* MusicalInstrument */,
 			);
 			productName = Memory;
 			productReference = 0AA329B21E33DD7900E03511 /* Memory.app */;
@@ -301,7 +313,6 @@
 			);
 			mainGroup = 0AA329A91E33DD7800E03511;
 			packageReferences = (
-				A1100E8428B7FB3F00A0E738 /* XCRemoteSwiftPackageReference "MusicalInstrument" */,
 			);
 			productRefGroup = 0AA329B31E33DD7900E03511 /* Products */;
 			projectDirPath = "";
@@ -325,11 +336,14 @@
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
 				A1100E3628B6D75D00A0E738 /* band.wav in Resources */,
 				A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */,
+				A154914028BB295100AD519D /* double_tap_bottom_right.wav in Resources */,
 				A1100E4428B6D75D00A0E738 /* bips.wav in Resources */,
 				A1100E4328B6D75D00A0E738 /* noteC3.wav in Resources */,
+				A154914128BB295100AD519D /* game_intro.wav in Resources */,
 				A1100E3C28B6D75D00A0E738 /* noteD2.wav in Resources */,
 				A1100E3B28B6D75D00A0E738 /* noteC2.wav in Resources */,
 				A1100E3F28B6D75D00A0E738 /* blow.wav in Resources */,
+				A154914228BB295100AD519D /* double_tap_top_left.wav in Resources */,
 				0AA329BD1E33DD7900E03511 /* Assets.xcassets in Resources */,
 				A1100E4228B6D75D00A0E738 /* miss.wav in Resources */,
 				A1100E3D28B6D75D00A0E738 /* noteB2.wav in Resources */,
@@ -337,6 +351,8 @@
 				A1100E4028B6D75D00A0E738 /* bass.wav in Resources */,
 				A1100E3828B6D75D00A0E738 /* briz.wav in Resources */,
 				A1100E4128B6D75D00A0E738 /* buzz.wav in Resources */,
+				A154914528BB744E00AD519D /* begin_play.wav in Resources */,
+				A154914328BB295100AD519D /* bravo.wav in Resources */,
 				A1100E3A28B6D75D00A0E738 /* succ.wav in Resources */,
 				0AA329BB1E33DD7900E03511 /* Main.storyboard in Resources */,
 			);
@@ -497,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -552,11 +568,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -571,16 +586,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86SDT7KNNB;
 				INFOPLIST_FILE = Memory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasi.AudioMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"Memory/libpd/..\"/**";
 			};
 			name = Debug;
@@ -594,15 +608,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86SDT7KNNB;
 				INFOPLIST_FILE = Memory/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasi.AudioMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"Memory/libpd/..\"/**";
 			};
 			name = Release;
@@ -612,11 +625,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MemoryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Xiomara.MemoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -629,11 +638,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MemoryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Xiomara.MemoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -672,25 +677,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A1100E8428B7FB3F00A0E738 /* XCRemoteSwiftPackageReference "MusicalInstrument" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/voglinio/MusicalInstrument/";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A1100E8528B7FB3F00A0E738 /* MusicalInstrument */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A1100E8428B7FB3F00A0E738 /* XCRemoteSwiftPackageReference "MusicalInstrument" */;
-			productName = MusicalInstrument;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AA329AA1E33DD7800E03511 /* Project object */;
 }

@@ -5,7 +5,6 @@
 import Foundation
 import AFNetworking
 import SwiftyJSON
-import MusicSymbol
 
 typealias CardsArray = [Card]
 

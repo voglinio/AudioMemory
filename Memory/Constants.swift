@@ -13,3 +13,10 @@ let keyID = "id"
 let defaultGridSize = 4 * 4
 let defaultAlertTitle = "Good job, Memory Master!"
 let defaultAlertMessage = "Want to play again?"
+
+let phaseJustStarted = -1
+
+let phaseIntro      = 1
+let phaseUpperLeft  = 2
+let phaseLowerRight = 3
+let phasePlay       = 4
