@@ -38,8 +38,7 @@ class GameController: UIViewController {
     var beginPlaySound: Sound!
     var successSound: Sound!
     var replaySound: Sound!
-    var prevAccel: CMAcceleration = CMAcceleration(x: 0, y: 0, z: 0)
-    var currAccel: CMAcceleration = CMAcceleration(x: 0, y: 0, z: 0)
+    var motionHandler: MotionHandler!
 
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10, bottom: 10.0, right: 10)
@@ -49,6 +48,8 @@ class GameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        motionHandler = MotionHandler()
         
         motionManager.startAccelerometerUpdates()
         accelTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateAccel), userInfo: nil, repeats: true)
@@ -66,18 +67,18 @@ class GameController: UIViewController {
         collectionView.isHidden = false
         collectionView.isUserInteractionEnabled = true
         
+        
 
-        introSound.play {
-            completed in
-            print("completed intro :  \(completed)")
-            self.game.gamePhase = phaseIntro
-            self.topLeftSound.play{
-                completed in
-                print("completed topleft : \(completed)")
-                self.game.gamePhase = phaseUpperLeft
-            }
-
-        }
+//        introSound.play {
+//            completed in
+//            print("completed intro :  \(completed)")
+//            self.game.gamePhase = phaseIntro
+//            self.topLeftSound.play{
+//                completed in
+//                print("completed topleft : \(completed)")
+//                self.game.gamePhase = phaseUpperLeft
+//            }
+//        }
         
         
         APIClient.shared.getCardImages { (cardsArray, error) in
@@ -150,31 +151,11 @@ class GameController: UIViewController {
         
         
         if let accelerometerData = motionManager.accelerometerData {
+            motionHandler.updateMotion(accelerometerData: accelerometerData)
         }
         
         
-        if game.gamePhase == phaseReplay {
-            if let accelerometerData = motionManager.accelerometerData {
-                currAccel = accelerometerData.acceleration
-                let dx = currAccel.x - prevAccel.x
-                
-                game.currDx = dx
-                
-                //print("currDx: ", game.currDx, " prevDx: ", game.prevDx)
-                
-                if game.currDx * game.prevDx < 0 && abs(game.currDx) > 0.6 && abs(game.prevDx) > 0.6 {
-                    print ("motion detected")
-                    self.game.gamePhase = phasePlay
-                    beginPlaySound.play{
-                        complete in
-                            self.startGame()
-                    }
-                    
-                }
-                prevAccel = currAccel
-                game.prevDx = game.currDx
-            }
-        }
+       
     }
         
     

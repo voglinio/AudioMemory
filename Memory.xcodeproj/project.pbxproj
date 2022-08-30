@@ -44,6 +44,7 @@
 		A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914628BB795800AD519D /* game_intro_xtd_v2.wav */; };
 		A154914A28BBB13800AD519D /* congrats.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914828BBB13700AD519D /* congrats.wav */; };
 		A154914B28BBB13800AD519D /* new_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914928BBB13800AD519D /* new_game.wav */; };
+		A154914D28BE539400AD519D /* MotionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154914C28BE539400AD519D /* MotionHandler.swift */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		A154914628BB795800AD519D /* game_intro_xtd_v2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_intro_xtd_v2.wav; sourceTree = "<group>"; };
 		A154914828BBB13700AD519D /* congrats.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = congrats.wav; sourceTree = "<group>"; };
 		A154914928BBB13800AD519D /* new_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_game.wav; sourceTree = "<group>"; };
+		A154914C28BE539400AD519D /* MotionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionHandler.swift; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				0AA329B71E33DD7900E03511 /* GameController.swift */,
+				A154914C28BE539400AD519D /* MotionHandler.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			files = (
 				0AA329CE1E3479C300E03511 /* CardCell.swift in Sources */,
 				0AFC11BE1E36B78D00D76586 /* MemoryGame.swift in Sources */,
+				A154914D28BE539400AD519D /* MotionHandler.swift in Sources */,
 				0AA329B81E33DD7900E03511 /* GameController.swift in Sources */,
 				0AFC11BC1E36A1B800D76586 /* Card.swift in Sources */,
 				0ADFD6DC1E37FE9500848732 /* Constants.swift in Sources */,
