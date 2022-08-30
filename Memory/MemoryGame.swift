@@ -26,7 +26,9 @@ class MemoryGame {
     var cards:[Card] = [Card]()
     var cardsShown:[Card] = [Card]()
     var isPlaying: Bool = false
-    var gamePhase: Int = -1
+    var gamePhase: Int = phaseJustStarted
+    var currDx: Double = 0.0
+    var prevDx: Double = 0.0
     
     // MARK: - Methods
     

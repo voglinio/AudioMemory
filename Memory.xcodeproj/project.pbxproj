@@ -42,6 +42,8 @@
 		A154914328BB295100AD519D /* bravo.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913F28BB295100AD519D /* bravo.wav */; };
 		A154914528BB744E00AD519D /* begin_play.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914428BB744E00AD519D /* begin_play.wav */; };
 		A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914628BB795800AD519D /* game_intro_xtd_v2.wav */; };
+		A154914A28BBB13800AD519D /* congrats.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914828BBB13700AD519D /* congrats.wav */; };
+		A154914B28BBB13800AD519D /* new_game.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914928BBB13800AD519D /* new_game.wav */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		A154913F28BB295100AD519D /* bravo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bravo.wav; sourceTree = "<group>"; };
 		A154914428BB744E00AD519D /* begin_play.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = begin_play.wav; sourceTree = "<group>"; };
 		A154914628BB795800AD519D /* game_intro_xtd_v2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_intro_xtd_v2.wav; sourceTree = "<group>"; };
+		A154914828BBB13700AD519D /* congrats.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = congrats.wav; sourceTree = "<group>"; };
+		A154914928BBB13800AD519D /* new_game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_game.wav; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +220,8 @@
 				A154914628BB795800AD519D /* game_intro_xtd_v2.wav */,
 				A154914428BB744E00AD519D /* begin_play.wav */,
 				A154913F28BB295100AD519D /* bravo.wav */,
+				A154914828BBB13700AD519D /* congrats.wav */,
+				A154914928BBB13800AD519D /* new_game.wav */,
 				A154913C28BB295100AD519D /* double_tap_bottom_right.wav */,
 				A154913E28BB295100AD519D /* double_tap_top_left.wav */,
 				A154913D28BB295100AD519D /* game_intro.wav */,
@@ -335,8 +341,10 @@
 				A1100E4528B6D75D00A0E738 /* noteF2.wav in Resources */,
 				A1100E3E28B6D75D00A0E738 /* blin.wav in Resources */,
 				A1100E3428B6D75D00A0E738 /* bats.wav in Resources */,
+				A154914B28BBB13800AD519D /* new_game.wav in Resources */,
 				A1100E3928B6D75D00A0E738 /* noteG2.wav in Resources */,
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
+				A154914A28BBB13800AD519D /* congrats.wav in Resources */,
 				A1100E3628B6D75D00A0E738 /* band.wav in Resources */,
 				A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */,
 				A154914028BB295100AD519D /* double_tap_bottom_right.wav in Resources */,
@@ -592,7 +600,7 @@
 				INFOPLIST_FILE = Memory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasi.AudioMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
@@ -614,7 +622,7 @@
 				INFOPLIST_FILE = Memory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasi.AudioMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";

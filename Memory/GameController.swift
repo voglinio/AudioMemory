@@ -7,6 +7,8 @@ import AFNetworking
 // import this
 import AVFoundation
 import SwiftySound
+import CoreMotion
+
 /*
     Καλώς ήρθες στο παιχνίδι ακουστικής μνήμης! Η συσκευή που κρατάς στα χέρια σου έχει ένα
     ειδικό πλαίσιο, τέσσερα επί τέσσερα, με δεκαέξι κουμπιά. Σε κάθε κουμπί αντιστοιχεί ένας
@@ -20,21 +22,24 @@ class GameController: UIViewController {
     @IBOutlet weak var toggleVisual: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
+    
+    let motionManager = CMMotionManager()
+
 
     var counter = 0
     var time = Timer()
     var timerRepeatIntro = Timer()
-    let introUrl = Bundle.main.url(forResource: "game_intro", withExtension: "wav")
-    let topLeftSoundUrl = Bundle.main.url(forResource: "double_tap_top_left", withExtension: "wav")
-    let bottomRightSoundUrl = Bundle.main.url(forResource: "double_tap_bottom_right", withExtension: "wav")
-    let bravoSoundUrl = Bundle.main.url(forResource: "bravo", withExtension: "wav")
-    let beginPlaySoundUrl = Bundle.main.url(forResource: "begin_play", withExtension: "wav")
+    var accelTimer = Timer()
 
     var introSound: Sound!
     var topLeftSound: Sound!
     var bottomRightSound: Sound!
     var bravoSound: Sound!
     var beginPlaySound: Sound!
+    var successSound: Sound!
+    var replaySound: Sound!
+    var prevAccel: CMAcceleration = CMAcceleration(x: 0, y: 0, z: 0)
+    var currAccel: CMAcceleration = CMAcceleration(x: 0, y: 0, z: 0)
 
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10, bottom: 10.0, right: 10)
@@ -44,8 +49,12 @@ class GameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpDoubleTap()
         
+        motionManager.startAccelerometerUpdates()
+        accelTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateAccel), userInfo: nil, repeats: true)
+
+
+        setUpDoubleTap()
         initSounds()
         
         game.gamePhase = phaseJustStarted
@@ -97,7 +106,12 @@ class GameController: UIViewController {
         
         beginPlaySound = Sound(url: beginPlaySoundUrl!)
         beginPlaySound.volume = 1.0
-
+        
+        successSound = Sound(url: successSoundUrl!)
+        successSound.volume = 1.0
+        
+        replaySound = Sound(url: replaySoundUrl!)
+        replaySound.volume = 1.0
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -118,10 +132,47 @@ class GameController: UIViewController {
         setupNewGame()
     }
     
+    func startGame(){
+        counter = 0
+        timer.text = "00:00"
+        
+        time.invalidate()
+        time = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    @objc func updateAccel() {
+        if game.gamePhase == phaseReplay {
+            if let accelerometerData = motionManager.accelerometerData {
+                currAccel = accelerometerData.acceleration
+                let dx = currAccel.x - prevAccel.x
+                
+                game.currDx = dx
+                
+                //print("currDx: ", game.currDx, " prevDx: ", game.prevDx)
+                
+                if game.currDx * game.prevDx < 0 && abs(game.currDx) > 0.6 && abs(game.prevDx) > 0.6 {
+                    print ("motion detected")
+                    self.game.gamePhase = phasePlay
+                    beginPlaySound.play{
+                        complete in
+                            self.startGame()
+                    }
+                    
+                }
+                prevAccel = currAccel
+                game.prevDx = game.currDx
+            }
+        }
+    }
+        
+    
     @IBAction func onStartGame(_ sender: Any) {
-        //collectionView.isHidden = false
-        
-        
         counter = 0
         timer.text = "00:00"
         
@@ -168,6 +219,12 @@ class GameController: UIViewController {
         if self.game.gamePhase == phaseJustStarted {
             return
         }
+        
+        if self.game.gamePhase == phaseReplay {
+            return
+        }
+
+        
         if self.game.gamePhase == phaseIntro {
             return
         }
@@ -193,7 +250,7 @@ class GameController: UIViewController {
 
            // Calibration phase lower right
            if self.game.gamePhase == phaseLowerRight {
-               if selectedIndexPath.row == 15{
+               if selectedIndexPath.row == 15 {
                    bravoSound.play {
                        completed in
                        print("completed bottom right :  \(completed)")
@@ -202,6 +259,7 @@ class GameController: UIViewController {
                        self.beginPlaySound.play{
                            completed in
                            self.game.gamePhase = phasePlay
+                           self.startGame()
                        }
                    }
                    return
@@ -269,6 +327,10 @@ extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
         if self.game.gamePhase == phaseJustStarted {
             return
         }
+        if self.game.gamePhase == phaseReplay {
+            return
+        }
+
         if self.game.gamePhase == phaseIntro {
             return
         }
@@ -332,26 +394,36 @@ extension GameController: MemoryGameProtocol {
     
     func memoryGameDidEnd(_ game: MemoryGame) {
         time.invalidate()
-        
-        let alertController = UIAlertController(
-            title: defaultAlertTitle,
-            message: defaultAlertMessage,
-            preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "No!", style: .cancel) { [weak self] (action) in
-            self?.collectionView.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
+            self.successSound.play{
+                completed in
+                self.game.gamePhase = phaseReplay
+                self.resetGame()
+                self.replaySound.play()
+            }
+
         }
-        let playAgainAction = UIAlertAction(title: "Yes!", style: .default) { [weak self] (action) in
-            self?.collectionView.isHidden = true
-            self?.resetGame()
-        }
+       
         
-        alertController.addAction(cancelAction)
-        alertController.addAction(playAgainAction)
+//        let alertController = UIAlertController(
+//            title: defaultAlertTitle,
+//            message: defaultAlertMessage,
+//            preferredStyle: .alert)
+//
+//        let cancelAction = UIAlertAction(title: "No!", style: .cancel) { [weak self] (action) in
+//            self?.collectionView.isHidden = true
+//        }
+//        let playAgainAction = UIAlertAction(title: "Yes!", style: .default) { [weak self] (action) in
+//            self?.collectionView.isHidden = true
+//            self?.resetGame()
+//        }
+//
+//        alertController.addAction(cancelAction)
+//        alertController.addAction(playAgainAction)
+//
+//        self.present(alertController, animated: true) { }
         
-        self.present(alertController, animated: true) { }
-        
-        resetGame()
+//        resetGame()
     }
 }
 
