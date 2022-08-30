@@ -29,7 +29,9 @@ class MemoryGame {
     var gamePhase: Int = phaseJustStarted
     var currDx: Double = 0.0
     var prevDx: Double = 0.0
-    
+    var currDz: Double = 0.0
+    var prevDz: Double = 0.0
+
     // MARK: - Methods
     
     func newGame(cardsArray:[Card]) -> [Card] {

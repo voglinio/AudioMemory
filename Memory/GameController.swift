@@ -147,6 +147,12 @@ class GameController: UIViewController {
     }
     
     @objc func updateAccel() {
+        
+        
+        if let accelerometerData = motionManager.accelerometerData {
+        }
+        
+        
         if game.gamePhase == phaseReplay {
             if let accelerometerData = motionManager.accelerometerData {
                 currAccel = accelerometerData.acceleration
