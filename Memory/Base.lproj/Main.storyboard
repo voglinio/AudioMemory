@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FJ2-Td-53R">
-                                <rect key="frame" x="0.0" y="71" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.95675891639999999" green="0.95692259069999996" blue="0.95674854519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.95675891637802124" green="0.95692259073257446" blue="0.95674854516983032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="0OD-86-qZW">
@@ -66,31 +66,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROC-dM-P0C">
-                                <rect key="frame" x="20" y="38" width="364" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="tul-DS-iCG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95675891637802124" green="0.95692259073257446" blue="0.95674854516983032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FJ2-Td-53R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="71" id="6mA-Vg-vtk"/>
+                            <constraint firstItem="FJ2-Td-53R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6mA-Vg-vtk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FJ2-Td-53R" secondAttribute="bottom" id="6wO-Xz-5Xd"/>
-                            <constraint firstItem="FJ2-Td-53R" firstAttribute="top" secondItem="ROC-dM-P0C" secondAttribute="bottom" constant="12" id="96e-mc-t3M"/>
-                            <constraint firstItem="ROC-dM-P0C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="GuO-sf-quB"/>
                             <constraint firstAttribute="trailing" secondItem="FJ2-Td-53R" secondAttribute="trailing" id="LVF-NF-GWu"/>
-                            <constraint firstItem="ROC-dM-P0C" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-10" id="cWO-Xo-MA8"/>
                             <constraint firstItem="FJ2-Td-53R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nHt-4B-RYb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xvb-Mg-rqt"/>
                     <connections>
                         <outlet property="collectionView" destination="FJ2-Td-53R" id="3cm-UC-xfh"/>
-                        <outlet property="timer" destination="ROC-dM-P0C" id="fTQ-Fw-6Ln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,10 +87,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Y2H-om-so2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Af-Vn-L08" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Af-Vn-L08" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" translucent="NO" id="kUd-0B-Ck2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.1843137255" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

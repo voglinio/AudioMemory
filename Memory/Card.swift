@@ -16,7 +16,7 @@ class Card {
     var id: String
     var shown: Bool = false
     var artworkURL: UIImage!
-    var soundId: UInt32 = 1016
+    var soundId: Int = 0
     var note: String!
     var noise: String!
     var sound: Sound!
@@ -36,7 +36,7 @@ class Card {
         self.artworkURL = image
     }
     
-    init(image: UIImage, soundId: UInt32) {
+    init(image: UIImage, soundId: Int) {
         self.id = NSUUID().uuidString
         self.shown = false
         self.artworkURL = image
@@ -69,7 +69,7 @@ class Card {
         return Card(card: self)
     }
     
-    func play(isOn: Bool = true) {
+    func play(soundIdx: Int) {
         // 1st version
         // AudioServicesPlaySystemSound(soundId)
         
@@ -81,13 +81,10 @@ class Card {
 //        }
         
         // 3rd version using Manos's wav files
-        if isOn  {
-            Sound.play(file: self.note, fileExtension: "wav")
-
-        }else{
-            Sound.play(file: self.noise, fileExtension: "wav")
-        }
-        
+        let note = APIClient.sounds[soundIdx][Int(self.soundId)]
+        print (soundIdx, self.soundId, note)
+        Sound.play(file: note, fileExtension: "wav")
+                
     }
 }
 

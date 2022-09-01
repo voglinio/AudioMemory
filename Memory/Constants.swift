@@ -32,3 +32,7 @@ let beginPlaySoundUrl = Bundle.main.url(forResource: "begin_play", withExtension
 
 let successSoundUrl =  Bundle.main.url(forResource: "congrats", withExtension: "wav")
 let replaySoundUrl = Bundle.main.url(forResource: "new_game", withExtension: "wav")
+
+let soundSetNotesUrl = Bundle.main.url(forResource: "sound_set_notes", withExtension: "wav")
+let soundSetNoiseUrl = Bundle.main.url(forResource: "sound_set_noise", withExtension: "wav")
+

@@ -19,7 +19,6 @@ import CoreMotion
 
 class GameController: UIViewController {
 
-    @IBOutlet weak var toggleVisual: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
     
@@ -30,6 +29,8 @@ class GameController: UIViewController {
     var time = Timer()
     var timerRepeatIntro = Timer()
     var accelTimer = Timer()
+    
+    var disableMotion : Bool = false
 
     var introSound: Sound!
     var topLeftSound: Sound!
@@ -39,9 +40,13 @@ class GameController: UIViewController {
     var successSound: Sound!
     var replaySound: Sound!
     var motionHandler: MotionHandler!
+    var noiseSet: Sound!
+    var notesSet: Sound!
+    var soundSets: [Sound?] = []
+    var prevRes: Int = 0
 
     
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10, bottom: 10.0, right: 10)
+    fileprivate let sectionInsets = UIEdgeInsets(top: 40.0, left: 20, bottom: 40.0, right: 20)
     
     let game = MemoryGame()
     var cards = [Card]()
@@ -52,6 +57,7 @@ class GameController: UIViewController {
         motionHandler = MotionHandler()
         
         motionManager.startAccelerometerUpdates()
+        motionManager.startGyroUpdates()
         accelTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateAccel), userInfo: nil, repeats: true)
 
 
@@ -66,20 +72,7 @@ class GameController: UIViewController {
         collectionView.delegate = self
         collectionView.isHidden = false
         collectionView.isUserInteractionEnabled = true
-        
-        
-
-//        introSound.play {
-//            completed in
-//            print("completed intro :  \(completed)")
-//            self.game.gamePhase = phaseIntro
-//            self.topLeftSound.play{
-//                completed in
-//                print("completed topleft : \(completed)")
-//                self.game.gamePhase = phaseUpperLeft
-//            }
-//        }
-        
+    
         
         APIClient.shared.getCardImages { (cardsArray, error) in
             if let _ = error {
@@ -113,6 +106,16 @@ class GameController: UIViewController {
         
         replaySound = Sound(url: replaySoundUrl!)
         replaySound.volume = 1.0
+
+        noiseSet = Sound(url: soundSetNoiseUrl!)
+        noiseSet.volume = 1.0
+
+        notesSet = Sound(url: soundSetNotesUrl!)
+        notesSet.volume = 1.0
+        
+        soundSets = [notesSet, noiseSet]
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -133,9 +136,26 @@ class GameController: UIViewController {
         setupNewGame()
     }
     
+    func startGameWithAudio(){
+        resetGame()
+        
+        self.disableMotion = true
+        introSound.play {
+            completed in
+            print("completed intro :  \(completed)")
+            self.game.gamePhase = phaseIntro
+            self.topLeftSound.play{
+                completed in
+                self.game.gamePhase = phaseUpperLeft
+                self.disableMotion = false
+                print("completed topleft : \(completed)", " - ", self.disableMotion)
+            }
+        }
+    }
+    
     func startGame(){
         counter = 0
-        timer.text = "00:00"
+        //timer.text = "00:00"
         
         time.invalidate()
         time = Timer.scheduledTimer(
@@ -149,11 +169,40 @@ class GameController: UIViewController {
     
     @objc func updateAccel() {
         
-        
-        if let accelerometerData = motionManager.accelerometerData {
-            motionHandler.updateMotion(accelerometerData: accelerometerData)
+        if self.disableMotion == true{
+            return
         }
         
+        
+        if let accelerometerData = motionManager.accelerometerData {
+            let res = motionHandler.updateMotion(accelerometerData: accelerometerData)
+            
+            if res == MotionUpDown && prevRes != MotionUpDown{
+                startGameWithAudio()
+
+                 return
+            }
+            
+            if res == MotionLeftRight  {
+                game.soundIndex = (game.soundIndex + 1) % 2
+                self.disableMotion = true
+                
+                soundSets[game.soundIndex]!.play {
+                    complete in
+                    self.disableMotion = false
+
+                }
+
+                return
+            }
+
+
+        }
+        
+        if let gyroData = motionManager.gyroData {
+            let res = motionHandler.updateMotion(gyroData: gyroData)
+            
+        }
         
        
     }
@@ -161,7 +210,7 @@ class GameController: UIViewController {
     
     @IBAction func onStartGame(_ sender: Any) {
         counter = 0
-        timer.text = "00:00"
+        //timer.text = "00:00"
         
         time.invalidate()
         time = Timer.scheduledTimer(
@@ -187,7 +236,7 @@ class GameController: UIViewController {
         let (m, s) = secondsToMinutesSeconds (counter)
         let mm = getStringFrom(seconds: m)
         let ss = getStringFrom(seconds: s)
-        timer.text = "\(mm):\(ss)"
+        //timer.text = "\(mm):\(ss)"
     }
     
     
@@ -238,6 +287,7 @@ class GameController: UIViewController {
            // Calibration phase lower right
            if self.game.gamePhase == phaseLowerRight {
                if selectedIndexPath.row == 15 {
+                   self.disableMotion = true
                    bravoSound.play {
                        completed in
                        print("completed bottom right :  \(completed)")
@@ -246,6 +296,7 @@ class GameController: UIViewController {
                        self.beginPlaySound.play{
                            completed in
                            self.game.gamePhase = phasePlay
+                           self.disableMotion = false
                            self.startGame()
                        }
                    }
@@ -277,7 +328,7 @@ class GameController: UIViewController {
                        return
                }
            }
-           cell.card?.play(isOn: self.toggleVisual.isOn)
+           cell.card?.play(soundIdx: game.soundIndex)
            game.didSelectCard(cell.card)
            
            collectionView.deselectItem(at: selectedIndexPath, animated:true)
@@ -391,26 +442,7 @@ extension GameController: MemoryGameProtocol {
 
         }
        
-        
-//        let alertController = UIAlertController(
-//            title: defaultAlertTitle,
-//            message: defaultAlertMessage,
-//            preferredStyle: .alert)
-//
-//        let cancelAction = UIAlertAction(title: "No!", style: .cancel) { [weak self] (action) in
-//            self?.collectionView.isHidden = true
-//        }
-//        let playAgainAction = UIAlertAction(title: "Yes!", style: .default) { [weak self] (action) in
-//            self?.collectionView.isHidden = true
-//            self?.resetGame()
-//        }
-//
-//        alertController.addAction(cancelAction)
-//        alertController.addAction(playAgainAction)
-//
-//        self.present(alertController, animated: true) { }
-        
-//        resetGame()
+ 
     }
 }
 
@@ -422,7 +454,11 @@ extension GameController: UICollectionViewDelegateFlowLayout {
         let availableWidth = Int(view.frame.width) - paddingSpace
         let widthPerItem = availableWidth / 4
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        let heightPaddingSpace = Int(sectionInsets.top) * 4
+        let availableHeight = Int(view.frame.height) - heightPaddingSpace
+        let heightPerItem = availableHeight / 4
+        
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
