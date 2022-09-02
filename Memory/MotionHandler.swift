@@ -67,7 +67,7 @@ class MotionHandler{
         currDx = dx
         currDz = dz
         
-        if currDx * prevDx < 0 && abs(currDx) > 0.6 && abs(prevDx) > 0.6 && abs(prevPrevDx) > 0.6 {
+        if currDx * prevDx < 0 && abs(currDx) > 1.0 && abs(prevDx) > 1.0 && abs(prevPrevDx) > 1.0 {
             print ("x - motion detected")
             prevPrevAccel = prevAccel
             prevAccel = currAccel

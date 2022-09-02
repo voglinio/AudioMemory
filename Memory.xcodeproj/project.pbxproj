@@ -38,7 +38,6 @@
 		A154914028BB295100AD519D /* double_tap_bottom_right.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913C28BB295100AD519D /* double_tap_bottom_right.wav */; };
 		A154914128BB295100AD519D /* game_intro.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913D28BB295100AD519D /* game_intro.wav */; };
 		A154914228BB295100AD519D /* double_tap_top_left.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913E28BB295100AD519D /* double_tap_top_left.wav */; };
-		A154914328BB295100AD519D /* bravo.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154913F28BB295100AD519D /* bravo.wav */; };
 		A154914528BB744E00AD519D /* begin_play.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914428BB744E00AD519D /* begin_play.wav */; };
 		A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914628BB795800AD519D /* game_intro_xtd_v2.wav */; };
 		A154914A28BBB13800AD519D /* congrats.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914828BBB13700AD519D /* congrats.wav */; };
@@ -47,6 +46,17 @@
 		A154914E28BF9EB400AD519D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA329BC1E33DD7900E03511 /* Assets.xcassets */; };
 		A154915128C0925500AD519D /* sound_set_notes.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154914F28C0925400AD519D /* sound_set_notes.wav */; };
 		A154915228C0925500AD519D /* sound_set_noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915028C0925500AD519D /* sound_set_noise.wav */; };
+		A154915E28C27F5D00AD519D /* ixos_eisagogis.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915328C27F5A00AD519D /* ixos_eisagogis.wav */; };
+		A154915F28C27F5D00AD519D /* pano-aristera-tetragono.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915428C27F5B00AD519D /* pano-aristera-tetragono.wav */; };
+		A154916028C27F5D00AD519D /* telos-paixnidiou.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915528C27F5B00AD519D /* telos-paixnidiou.wav */; };
+		A154916128C27F5D00AD519D /* arxi-paixnidiou.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915628C27F5B00AD519D /* arxi-paixnidiou.wav */; };
+		A154916228C27F5D00AD519D /* sigxaritiria.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915728C27F5B00AD519D /* sigxaritiria.wav */; };
+		A154916328C27F5D00AD519D /* metavasi-apo-ixo-set-se paixnidi.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915828C27F5B00AD519D /* metavasi-apo-ixo-set-se paixnidi.wav */; };
+		A154916428C27F5D00AD519D /* bravo.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915928C27F5C00AD519D /* bravo.wav */; };
+		A154916528C27F5D00AD519D /* allagi-ixou-set.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915A28C27F5C00AD519D /* allagi-ixou-set.wav */; };
+		A154916628C27F5D00AD519D /* kato-deksia-tetragono.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915B28C27F5C00AD519D /* kato-deksia-tetragono.wav */; };
+		A154916728C27F5D00AD519D /* paixe-xana.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915C28C27F5C00AD519D /* paixe-xana.wav */; };
+		A154916828C27F5D00AD519D /* protropi-allagi-set-ixou.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915D28C27F5C00AD519D /* protropi-allagi-set-ixou.wav */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +109,6 @@
 		A154913C28BB295100AD519D /* double_tap_bottom_right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = double_tap_bottom_right.wav; sourceTree = "<group>"; };
 		A154913D28BB295100AD519D /* game_intro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_intro.wav; sourceTree = "<group>"; };
 		A154913E28BB295100AD519D /* double_tap_top_left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = double_tap_top_left.wav; sourceTree = "<group>"; };
-		A154913F28BB295100AD519D /* bravo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bravo.wav; sourceTree = "<group>"; };
 		A154914428BB744E00AD519D /* begin_play.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = begin_play.wav; sourceTree = "<group>"; };
 		A154914628BB795800AD519D /* game_intro_xtd_v2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = game_intro_xtd_v2.wav; sourceTree = "<group>"; };
 		A154914828BBB13700AD519D /* congrats.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = congrats.wav; sourceTree = "<group>"; };
@@ -107,6 +116,17 @@
 		A154914C28BE539400AD519D /* MotionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionHandler.swift; sourceTree = "<group>"; };
 		A154914F28C0925400AD519D /* sound_set_notes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_set_notes.wav; sourceTree = "<group>"; };
 		A154915028C0925500AD519D /* sound_set_noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_set_noise.wav; sourceTree = "<group>"; };
+		A154915328C27F5A00AD519D /* ixos_eisagogis.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ixos_eisagogis.wav; sourceTree = "<group>"; };
+		A154915428C27F5B00AD519D /* pano-aristera-tetragono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "pano-aristera-tetragono.wav"; sourceTree = "<group>"; };
+		A154915528C27F5B00AD519D /* telos-paixnidiou.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "telos-paixnidiou.wav"; sourceTree = "<group>"; };
+		A154915628C27F5B00AD519D /* arxi-paixnidiou.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "arxi-paixnidiou.wav"; sourceTree = "<group>"; };
+		A154915728C27F5B00AD519D /* sigxaritiria.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sigxaritiria.wav; sourceTree = "<group>"; };
+		A154915828C27F5B00AD519D /* metavasi-apo-ixo-set-se paixnidi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "metavasi-apo-ixo-set-se paixnidi.wav"; sourceTree = "<group>"; };
+		A154915928C27F5C00AD519D /* bravo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bravo.wav; path = "../../../Downloads/ixoi-paixnidiou/bravo.wav"; sourceTree = "<group>"; };
+		A154915A28C27F5C00AD519D /* allagi-ixou-set.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "allagi-ixou-set.wav"; sourceTree = "<group>"; };
+		A154915B28C27F5C00AD519D /* kato-deksia-tetragono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kato-deksia-tetragono.wav"; sourceTree = "<group>"; };
+		A154915C28C27F5C00AD519D /* paixe-xana.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "paixe-xana.wav"; sourceTree = "<group>"; };
+		A154915D28C27F5C00AD519D /* protropi-allagi-set-ixou.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "protropi-allagi-set-ixou.wav"; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,9 +244,19 @@
 		A1100E1E28B6D6F700A0E738 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A154915A28C27F5C00AD519D /* allagi-ixou-set.wav */,
+				A154915628C27F5B00AD519D /* arxi-paixnidiou.wav */,
+				A154915928C27F5C00AD519D /* bravo.wav */,
+				A154915328C27F5A00AD519D /* ixos_eisagogis.wav */,
+				A154915B28C27F5C00AD519D /* kato-deksia-tetragono.wav */,
+				A154915828C27F5B00AD519D /* metavasi-apo-ixo-set-se paixnidi.wav */,
+				A154915C28C27F5C00AD519D /* paixe-xana.wav */,
+				A154915428C27F5B00AD519D /* pano-aristera-tetragono.wav */,
+				A154915D28C27F5C00AD519D /* protropi-allagi-set-ixou.wav */,
+				A154915728C27F5B00AD519D /* sigxaritiria.wav */,
+				A154915528C27F5B00AD519D /* telos-paixnidiou.wav */,
 				A154914628BB795800AD519D /* game_intro_xtd_v2.wav */,
 				A154914428BB744E00AD519D /* begin_play.wav */,
-				A154913F28BB295100AD519D /* bravo.wav */,
 				A154915028C0925500AD519D /* sound_set_noise.wav */,
 				A154914F28C0925400AD519D /* sound_set_notes.wav */,
 				A154914828BBB13700AD519D /* congrats.wav */,
@@ -348,18 +378,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1100E4528B6D75D00A0E738 /* noteF2.wav in Resources */,
+				A154916728C27F5D00AD519D /* paixe-xana.wav in Resources */,
 				A1100E3E28B6D75D00A0E738 /* blin.wav in Resources */,
 				A1100E3428B6D75D00A0E738 /* bats.wav in Resources */,
 				A154915128C0925500AD519D /* sound_set_notes.wav in Resources */,
 				A154914B28BBB13800AD519D /* new_game.wav in Resources */,
 				A1100E3928B6D75D00A0E738 /* noteG2.wav in Resources */,
+				A154916828C27F5D00AD519D /* protropi-allagi-set-ixou.wav in Resources */,
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
+				A154915F28C27F5D00AD519D /* pano-aristera-tetragono.wav in Resources */,
 				A154914A28BBB13800AD519D /* congrats.wav in Resources */,
+				A154916128C27F5D00AD519D /* arxi-paixnidiou.wav in Resources */,
 				A1100E3628B6D75D00A0E738 /* band.wav in Resources */,
 				A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */,
 				A154914028BB295100AD519D /* double_tap_bottom_right.wav in Resources */,
+				A154916428C27F5D00AD519D /* bravo.wav in Resources */,
+				A154915E28C27F5D00AD519D /* ixos_eisagogis.wav in Resources */,
+				A154916528C27F5D00AD519D /* allagi-ixou-set.wav in Resources */,
+				A154916328C27F5D00AD519D /* metavasi-apo-ixo-set-se paixnidi.wav in Resources */,
 				A1100E4428B6D75D00A0E738 /* bips.wav in Resources */,
+				A154916628C27F5D00AD519D /* kato-deksia-tetragono.wav in Resources */,
 				A1100E4328B6D75D00A0E738 /* noteC3.wav in Resources */,
+				A154916228C27F5D00AD519D /* sigxaritiria.wav in Resources */,
 				A154914128BB295100AD519D /* game_intro.wav in Resources */,
 				A1100E3C28B6D75D00A0E738 /* noteD2.wav in Resources */,
 				A1100E3B28B6D75D00A0E738 /* noteC2.wav in Resources */,
@@ -374,7 +414,7 @@
 				A1100E4128B6D75D00A0E738 /* buzz.wav in Resources */,
 				A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */,
 				A154914528BB744E00AD519D /* begin_play.wav in Resources */,
-				A154914328BB295100AD519D /* bravo.wav in Resources */,
+				A154916028C27F5D00AD519D /* telos-paixnidiou.wav in Resources */,
 				A154914E28BF9EB400AD519D /* Assets.xcassets in Resources */,
 				A1100E3A28B6D75D00A0E738 /* succ.wav in Resources */,
 				0AA329BB1E33DD7900E03511 /* Main.storyboard in Resources */,

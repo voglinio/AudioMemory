@@ -46,7 +46,7 @@ class GameController: UIViewController {
     var prevRes: Int = 0
 
     
-    fileprivate let sectionInsets = UIEdgeInsets(top: 40.0, left: 20, bottom: 40.0, right: 20)
+    fileprivate let sectionInsets = UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15)
     
     let game = MemoryGame()
     var cards = [Card]()
@@ -147,7 +147,6 @@ class GameController: UIViewController {
             self.topLeftSound.play{
                 completed in
                 self.game.gamePhase = phaseUpperLeft
-                self.disableMotion = false
                 print("completed topleft : \(completed)", " - ", self.disableMotion)
             }
         }
@@ -184,6 +183,9 @@ class GameController: UIViewController {
             }
             
             if res == MotionLeftRight  {
+                if self.disableMotion == true{
+                    return
+                }
                 game.soundIndex = (game.soundIndex + 1) % 2
                 self.disableMotion = true
                 
@@ -297,6 +299,7 @@ class GameController: UIViewController {
                            completed in
                            self.game.gamePhase = phasePlay
                            self.disableMotion = false
+                           
                            self.startGame()
                        }
                    }
