@@ -42,6 +42,9 @@ class GameController: UIViewController {
     var motionHandler: MotionHandler!
     var noiseSet: Sound!
     var notesSet: Sound!
+    var allagiIxou: Sound!
+    var protopiAllagiIxou: Sound!
+    
     var soundSets: [Sound?] = []
     var prevRes: Int = 0
 
@@ -113,6 +116,13 @@ class GameController: UIViewController {
         notesSet = Sound(url: soundSetNotesUrl!)
         notesSet.volume = 1.0
         
+        protopiAllagiIxou = Sound(url: allagiIxouUrl!)
+        protopiAllagiIxou.volume = 1.0
+        
+        allagiIxou = Sound(url: epelexesIxoUrl!)
+        allagiIxou.volume = 1.0
+        
+        
         soundSets = [notesSet, noiseSet]
         
         
@@ -174,37 +184,37 @@ class GameController: UIViewController {
         
         
         if let accelerometerData = motionManager.accelerometerData {
-            let res = motionHandler.updateMotion(accelerometerData: accelerometerData)
+            let res = motionHandler.updateMotionV2(accelerometerData: accelerometerData)
             
-            if res == MotionUpDown && prevRes != MotionUpDown{
+            
+            if res == MotionUpDown {
                 startGameWithAudio()
-
                  return
             }
-            
+
             if res == MotionLeftRight  {
-                if self.disableMotion == true{
-                    return
-                }
                 game.soundIndex = (game.soundIndex + 1) % 2
                 self.disableMotion = true
-                
-                soundSets[game.soundIndex]!.play {
+
+                allagiIxou.play {
                     complete in
-                    self.disableMotion = false
+                    self.soundSets[self.game.soundIndex]!.play {
+                        complete in
+                        self.disableMotion = false
 
+                    }
                 }
-
+                
                 return
             }
 
 
         }
         
-        if let gyroData = motionManager.gyroData {
-            let res = motionHandler.updateMotion(gyroData: gyroData)
-            
-        }
+//        if let gyroData = motionManager.gyroData {
+//            let res = motionHandler.updateMotion(gyroData: gyroData)
+//
+//        }
         
        
     }
@@ -236,8 +246,8 @@ class GameController: UIViewController {
     @objc func timerAction() {
         counter += 1
         let (m, s) = secondsToMinutesSeconds (counter)
-        let mm = getStringFrom(seconds: m)
-        let ss = getStringFrom(seconds: s)
+        _ = getStringFrom(seconds: m)
+        _ = getStringFrom(seconds: s)
         //timer.text = "\(mm):\(ss)"
     }
     
@@ -295,13 +305,19 @@ class GameController: UIViewController {
                        print("completed bottom right :  \(completed)")
                        self.game.gamePhase = phaseLowerRight
                        
-                       self.beginPlaySound.play{
+                       self.protopiAllagiIxou.play {
                            completed in
-                           self.game.gamePhase = phasePlay
+                           self.game.gamePhase = phaseAllagiIxou
                            self.disableMotion = false
-                           
-                           self.startGame()
                        }
+                       
+//                       self.beginPlaySound.play{
+//                           completed in
+//                           self.game.gamePhase = phasePlay
+//                           self.disableMotion = false
+//
+//                           self.startGame()
+//                       }
                    }
                    return
                }else{

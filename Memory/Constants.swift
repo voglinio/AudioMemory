@@ -22,17 +22,22 @@ let phaseUpperLeft      = 2
 let phaseLowerRight     = 3
 let phasePlay           = 4
 let phaseReplay         = 5
+let phaseAllagiIxou     = 6
 
 
-let introUrl = Bundle.main.url(forResource: "game_intro_xtd_v2", withExtension: "wav")
-let topLeftSoundUrl = Bundle.main.url(forResource: "double_tap_top_left", withExtension: "wav")
-let bottomRightSoundUrl = Bundle.main.url(forResource: "double_tap_bottom_right", withExtension: "wav")
+let introUrl = Bundle.main.url(forResource: "ixos_eisagogis", withExtension: "wav")
+let topLeftSoundUrl = Bundle.main.url(forResource: "pano-aristera-tetragono", withExtension: "wav")
+let bottomRightSoundUrl = Bundle.main.url(forResource: "kato-deksia-tetragono", withExtension: "wav")
 let bravoSoundUrl = Bundle.main.url(forResource: "bravo", withExtension: "wav")
-let beginPlaySoundUrl = Bundle.main.url(forResource: "begin_play", withExtension: "wav")
+let beginPlaySoundUrl = Bundle.main.url(forResource: "arxi-paixnidiou", withExtension: "wav")
 
-let successSoundUrl =  Bundle.main.url(forResource: "congrats", withExtension: "wav")
+let successSoundUrl =  Bundle.main.url(forResource: "sigxaritiria", withExtension: "wav")
 let replaySoundUrl = Bundle.main.url(forResource: "new_game", withExtension: "wav")
 
-let soundSetNotesUrl = Bundle.main.url(forResource: "sound_set_notes", withExtension: "wav")
-let soundSetNoiseUrl = Bundle.main.url(forResource: "sound_set_noise", withExtension: "wav")
+let soundSetNotesUrl = Bundle.main.url(forResource: "notea2_g2", withExtension: "wav")
+let soundSetNoiseUrl = Bundle.main.url(forResource: "band_noise", withExtension: "wav")
+
+let allagiIxouUrl = Bundle.main.url(forResource: "protropi-allagi-set-ixou", withExtension: "wav")
+
+let epelexesIxoUrl = Bundle.main.url(forResource: "allagi-ixou-set", withExtension: "wav")
 

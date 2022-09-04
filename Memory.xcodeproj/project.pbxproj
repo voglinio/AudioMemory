@@ -57,6 +57,9 @@
 		A154916628C27F5D00AD519D /* kato-deksia-tetragono.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915B28C27F5C00AD519D /* kato-deksia-tetragono.wav */; };
 		A154916728C27F5D00AD519D /* paixe-xana.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915C28C27F5C00AD519D /* paixe-xana.wav */; };
 		A154916828C27F5D00AD519D /* protropi-allagi-set-ixou.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154915D28C27F5C00AD519D /* protropi-allagi-set-ixou.wav */; };
+		A154916A28C3B97200AD519D /* notea2_g2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154916928C3B97200AD519D /* notea2_g2.wav */; };
+		A154916E28C492FE00AD519D /* band_noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154916D28C492FE00AD519D /* band_noise.wav */; };
+		A154917028C4A55A00AD519D /* ixos_eisagogis_xtd.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154916F28C4A55A00AD519D /* ixos_eisagogis_xtd.wav */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +130,9 @@
 		A154915B28C27F5C00AD519D /* kato-deksia-tetragono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kato-deksia-tetragono.wav"; sourceTree = "<group>"; };
 		A154915C28C27F5C00AD519D /* paixe-xana.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "paixe-xana.wav"; sourceTree = "<group>"; };
 		A154915D28C27F5C00AD519D /* protropi-allagi-set-ixou.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "protropi-allagi-set-ixou.wav"; sourceTree = "<group>"; };
+		A154916928C3B97200AD519D /* notea2_g2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notea2_g2.wav; sourceTree = "<group>"; };
+		A154916D28C492FE00AD519D /* band_noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = band_noise.wav; sourceTree = "<group>"; };
+		A154916F28C4A55A00AD519D /* ixos_eisagogis_xtd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ixos_eisagogis_xtd.wav; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +252,9 @@
 			children = (
 				A154915A28C27F5C00AD519D /* allagi-ixou-set.wav */,
 				A154915628C27F5B00AD519D /* arxi-paixnidiou.wav */,
+				A154916F28C4A55A00AD519D /* ixos_eisagogis_xtd.wav */,
+				A154916928C3B97200AD519D /* notea2_g2.wav */,
+				A154916D28C492FE00AD519D /* band_noise.wav */,
 				A154915928C27F5C00AD519D /* bravo.wav */,
 				A154915328C27F5A00AD519D /* ixos_eisagogis.wav */,
 				A154915B28C27F5C00AD519D /* kato-deksia-tetragono.wav */,
@@ -383,6 +392,7 @@
 				A1100E3428B6D75D00A0E738 /* bats.wav in Resources */,
 				A154915128C0925500AD519D /* sound_set_notes.wav in Resources */,
 				A154914B28BBB13800AD519D /* new_game.wav in Resources */,
+				A154916E28C492FE00AD519D /* band_noise.wav in Resources */,
 				A1100E3928B6D75D00A0E738 /* noteG2.wav in Resources */,
 				A154916828C27F5D00AD519D /* protropi-allagi-set-ixou.wav in Resources */,
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
@@ -391,6 +401,7 @@
 				A154916128C27F5D00AD519D /* arxi-paixnidiou.wav in Resources */,
 				A1100E3628B6D75D00A0E738 /* band.wav in Resources */,
 				A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */,
+				A154916A28C3B97200AD519D /* notea2_g2.wav in Resources */,
 				A154914028BB295100AD519D /* double_tap_bottom_right.wav in Resources */,
 				A154916428C27F5D00AD519D /* bravo.wav in Resources */,
 				A154915E28C27F5D00AD519D /* ixos_eisagogis.wav in Resources */,
@@ -401,6 +412,7 @@
 				A1100E4328B6D75D00A0E738 /* noteC3.wav in Resources */,
 				A154916228C27F5D00AD519D /* sigxaritiria.wav in Resources */,
 				A154914128BB295100AD519D /* game_intro.wav in Resources */,
+				A154917028C4A55A00AD519D /* ixos_eisagogis_xtd.wav in Resources */,
 				A1100E3C28B6D75D00A0E738 /* noteD2.wav in Resources */,
 				A1100E3B28B6D75D00A0E738 /* noteC2.wav in Resources */,
 				A1100E3F28B6D75D00A0E738 /* blow.wav in Resources */,
