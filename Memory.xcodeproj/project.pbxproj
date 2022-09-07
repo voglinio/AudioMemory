@@ -60,6 +60,11 @@
 		A154916A28C3B97200AD519D /* notea2_g2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154916928C3B97200AD519D /* notea2_g2.wav */; };
 		A154916E28C492FE00AD519D /* band_noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154916D28C492FE00AD519D /* band_noise.wav */; };
 		A154917028C4A55A00AD519D /* ixos_eisagogis_xtd.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154916F28C4A55A00AD519D /* ixos_eisagogis_xtd.wav */; };
+		A154917428C4B28400AD519D /* otan_theliseis_na_xekiniseis_xtd.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154917328C4B28300AD519D /* otan_theliseis_na_xekiniseis_xtd.wav */; };
+		A154917628C4B5E900AD519D /* otan_theliseis_na_xekiniseis_kouna.wav in Resources */ = {isa = PBXBuildFile; fileRef = A154917528C4B5E900AD519D /* otan_theliseis_na_xekiniseis_kouna.wav */; };
+		A155327828C883BD006A44B6 /* ixos-eisagogis-xtd.wav in Resources */ = {isa = PBXBuildFile; fileRef = A155327728C883BD006A44B6 /* ixos-eisagogis-xtd.wav */; };
+		A156B32D28C76A06004D82A1 /* ixos-ekinisis-kiniseis.wav in Resources */ = {isa = PBXBuildFile; fileRef = A156B32C28C76A05004D82A1 /* ixos-ekinisis-kiniseis.wav */; };
+		A156B32F28C76A13004D82A1 /* ixos-eisagogis.wav in Resources */ = {isa = PBXBuildFile; fileRef = A156B32E28C76A13004D82A1 /* ixos-eisagogis.wav */; };
 		F2B01D3C8D5FAEBB96FB6521 /* Pods_Memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88F160164B7B752D44A5D7 /* Pods_Memory.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +138,11 @@
 		A154916928C3B97200AD519D /* notea2_g2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notea2_g2.wav; sourceTree = "<group>"; };
 		A154916D28C492FE00AD519D /* band_noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = band_noise.wav; sourceTree = "<group>"; };
 		A154916F28C4A55A00AD519D /* ixos_eisagogis_xtd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ixos_eisagogis_xtd.wav; sourceTree = "<group>"; };
+		A154917328C4B28300AD519D /* otan_theliseis_na_xekiniseis_xtd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = otan_theliseis_na_xekiniseis_xtd.wav; sourceTree = "<group>"; };
+		A154917528C4B5E900AD519D /* otan_theliseis_na_xekiniseis_kouna.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = otan_theliseis_na_xekiniseis_kouna.wav; sourceTree = "<group>"; };
+		A155327728C883BD006A44B6 /* ixos-eisagogis-xtd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ixos-eisagogis-xtd.wav"; sourceTree = "<group>"; };
+		A156B32C28C76A05004D82A1 /* ixos-ekinisis-kiniseis.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ixos-ekinisis-kiniseis.wav"; sourceTree = "<group>"; };
+		A156B32E28C76A13004D82A1 /* ixos-eisagogis.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ixos-eisagogis.wav"; sourceTree = "<group>"; };
 		A1E3997228AD3E0D0086DEC1 /* Memory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memory-Bridging-Header.h"; sourceTree = "<group>"; };
 		C49B13ADC330C75B6F15364F /* Pods-Memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memory/Pods-Memory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,10 +260,15 @@
 		A1100E1E28B6D6F700A0E738 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A156B32C28C76A05004D82A1 /* ixos-ekinisis-kiniseis.wav */,
+				A155327728C883BD006A44B6 /* ixos-eisagogis-xtd.wav */,
+				A156B32E28C76A13004D82A1 /* ixos-eisagogis.wav */,
 				A154915A28C27F5C00AD519D /* allagi-ixou-set.wav */,
 				A154915628C27F5B00AD519D /* arxi-paixnidiou.wav */,
 				A154916F28C4A55A00AD519D /* ixos_eisagogis_xtd.wav */,
 				A154916928C3B97200AD519D /* notea2_g2.wav */,
+				A154917528C4B5E900AD519D /* otan_theliseis_na_xekiniseis_kouna.wav */,
+				A154917328C4B28300AD519D /* otan_theliseis_na_xekiniseis_xtd.wav */,
 				A154916D28C492FE00AD519D /* band_noise.wav */,
 				A154915928C27F5C00AD519D /* bravo.wav */,
 				A154915328C27F5A00AD519D /* ixos_eisagogis.wav */,
@@ -395,9 +410,11 @@
 				A154916E28C492FE00AD519D /* band_noise.wav in Resources */,
 				A1100E3928B6D75D00A0E738 /* noteG2.wav in Resources */,
 				A154916828C27F5D00AD519D /* protropi-allagi-set-ixou.wav in Resources */,
+				A156B32F28C76A13004D82A1 /* ixos-eisagogis.wav in Resources */,
 				0AA329C01E33DD7900E03511 /* LaunchScreen.storyboard in Resources */,
 				A154915F28C27F5D00AD519D /* pano-aristera-tetragono.wav in Resources */,
 				A154914A28BBB13800AD519D /* congrats.wav in Resources */,
+				A154917428C4B28400AD519D /* otan_theliseis_na_xekiniseis_xtd.wav in Resources */,
 				A154916128C27F5D00AD519D /* arxi-paixnidiou.wav in Resources */,
 				A1100E3628B6D75D00A0E738 /* band.wav in Resources */,
 				A1100E3728B6D75D00A0E738 /* noteE2.wav in Resources */,
@@ -413,6 +430,7 @@
 				A154916228C27F5D00AD519D /* sigxaritiria.wav in Resources */,
 				A154914128BB295100AD519D /* game_intro.wav in Resources */,
 				A154917028C4A55A00AD519D /* ixos_eisagogis_xtd.wav in Resources */,
+				A155327828C883BD006A44B6 /* ixos-eisagogis-xtd.wav in Resources */,
 				A1100E3C28B6D75D00A0E738 /* noteD2.wav in Resources */,
 				A1100E3B28B6D75D00A0E738 /* noteC2.wav in Resources */,
 				A1100E3F28B6D75D00A0E738 /* blow.wav in Resources */,
@@ -425,9 +443,11 @@
 				A1100E3828B6D75D00A0E738 /* briz.wav in Resources */,
 				A1100E4128B6D75D00A0E738 /* buzz.wav in Resources */,
 				A154914728BB795800AD519D /* game_intro_xtd_v2.wav in Resources */,
+				A156B32D28C76A06004D82A1 /* ixos-ekinisis-kiniseis.wav in Resources */,
 				A154914528BB744E00AD519D /* begin_play.wav in Resources */,
 				A154916028C27F5D00AD519D /* telos-paixnidiou.wav in Resources */,
 				A154914E28BF9EB400AD519D /* Assets.xcassets in Resources */,
+				A154917628C4B5E900AD519D /* otan_theliseis_na_xekiniseis_kouna.wav in Resources */,
 				A1100E3A28B6D75D00A0E738 /* succ.wav in Resources */,
 				0AA329BB1E33DD7900E03511 /* Main.storyboard in Resources */,
 			);
@@ -665,7 +685,7 @@
 				INFOPLIST_FILE = Memory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasi.AudioMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";
@@ -688,7 +708,7 @@
 				INFOPLIST_FILE = Memory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.epoasi.AudioMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Memory/Memory-Bridging-Header.h";

@@ -44,6 +44,7 @@ class GameController: UIViewController {
     var notesSet: Sound!
     var allagiIxou: Sound!
     var protopiAllagiIxou: Sound!
+    var otan: Sound!
     
     var soundSets: [Sound?] = []
     var prevRes: Int = 0
@@ -122,6 +123,8 @@ class GameController: UIViewController {
         allagiIxou = Sound(url: epelexesIxoUrl!)
         allagiIxou.volume = 1.0
         
+        otan = Sound(url: otanUrl!)
+        otan.volume = 1.0
         
         soundSets = [notesSet, noiseSet]
         
@@ -188,11 +191,23 @@ class GameController: UIViewController {
             
             
             if res == MotionUpDown {
-                startGameWithAudio()
-                 return
+                if game.gamePhase == phaseAllagiIxou {
+                   self.beginPlaySound.play{
+                       completed in
+                       self.game.gamePhase = phasePlay
+                       self.disableMotion = false
+
+                       self.startGame()
+                       return
+
+                   }
+                }else{
+                    startGameWithAudio()
+                    return
+                }
             }
 
-            if res == MotionLeftRight  {
+            if res == MotionLeftRight &&  self.game.gamePhase != phasePlay  {
                 game.soundIndex = (game.soundIndex + 1) % 2
                 self.disableMotion = true
 
@@ -277,6 +292,10 @@ class GameController: UIViewController {
             return
         }
 
+        if self.game.gamePhase == phaseAllagiIxou {
+            return
+        }
+        
        if let selectedIndexPath = collectionView.indexPathForItem(at: pointInCollectionView) {
            
            // Calibration phase upper left
@@ -307,17 +326,15 @@ class GameController: UIViewController {
                        
                        self.protopiAllagiIxou.play {
                            completed in
-                           self.game.gamePhase = phaseAllagiIxou
-                           self.disableMotion = false
+                           
+                           self.otan.play{
+                               completed in
+                               self.game.gamePhase = phaseAllagiIxou
+                               self.disableMotion = false
+                           }
                        }
                        
-//                       self.beginPlaySound.play{
-//                           completed in
-//                           self.game.gamePhase = phasePlay
-//                           self.disableMotion = false
-//
-//                           self.startGame()
-//                       }
+
                    }
                    return
                }else{
@@ -397,6 +414,10 @@ extension GameController: UICollectionViewDelegate, UICollectionViewDataSource {
         if self.game.gamePhase == phaseLowerRight {
             return
         }
+        
+        if self.game.gamePhase == phaseAllagiIxou {
+            return
+        }
 
         if cell.shown {
             switch UIDevice.current.model {
@@ -456,8 +477,7 @@ extension GameController: MemoryGameProtocol {
                 completed in
                 self.game.gamePhase = phaseReplay
                 self.resetGame()
-                self.replaySound.play()
-            }
+             }
 
         }
        

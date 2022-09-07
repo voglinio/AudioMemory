@@ -25,7 +25,7 @@ let phaseReplay         = 5
 let phaseAllagiIxou     = 6
 
 
-let introUrl = Bundle.main.url(forResource: "ixos_eisagogis", withExtension: "wav")
+let introUrl = Bundle.main.url(forResource: "ixos-eisagogis-xtd", withExtension: "wav")
 let topLeftSoundUrl = Bundle.main.url(forResource: "pano-aristera-tetragono", withExtension: "wav")
 let bottomRightSoundUrl = Bundle.main.url(forResource: "kato-deksia-tetragono", withExtension: "wav")
 let bravoSoundUrl = Bundle.main.url(forResource: "bravo", withExtension: "wav")
@@ -40,4 +40,6 @@ let soundSetNoiseUrl = Bundle.main.url(forResource: "band_noise", withExtension:
 let allagiIxouUrl = Bundle.main.url(forResource: "protropi-allagi-set-ixou", withExtension: "wav")
 
 let epelexesIxoUrl = Bundle.main.url(forResource: "allagi-ixou-set", withExtension: "wav")
+
+let otanUrl = Bundle.main.url(forResource: "ixos-ekinisis-kiniseis", withExtension: "wav")
 

@@ -81,8 +81,12 @@ class Card {
 //        }
         
         // 3rd version using Manos's wav files
-        let note = APIClient.sounds[soundIdx][Int(self.soundId)]
-        print (soundIdx, self.soundId, note)
+        var effSoundIdx = soundIdx
+        if effSoundIdx < 0{
+            effSoundIdx = 0
+        }
+        let note = APIClient.sounds[effSoundIdx][Int(self.soundId)]
+        print (effSoundIdx, self.soundId, note)
         Sound.play(file: note, fileExtension: "wav")
                 
     }
